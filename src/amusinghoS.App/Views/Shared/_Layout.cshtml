@@ -9,18 +9,45 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">amusinghoS</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                    </ul>
-                </div>
+                <a class="navbar-brand" href="#">Navbar</a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fuck</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Book</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+                                Language
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation">
+                                    <a id="en">English</a>
+                                </li>
+                                <li role="presentation">
+                                    <a id="zh">Chinese</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -33,3 +60,13 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+<script>
+    $("#en").click(function () {
+        document.cookie = 'CULTURE=en-US';
+        location.reload();
+    });
+    $("#zh").click(function () {
+        document.cookie = 'CULTURE=zh-CN';
+        location.reload();
+    });
+</script>

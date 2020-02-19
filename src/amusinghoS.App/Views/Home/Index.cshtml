@@ -1,4 +1,5 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +54,7 @@
 
             <!-- Site header -->
             <header class="tm-site-header-box tm-bg-dark">
-                <h1 class="tm-site-title">asdsasa</h1>
+                <h1 class="tm-site-title">@Localizer["Home_Title"]</h1>
                 <p class="mb-0 tm-site-subtitle">Free HTML Template for you</p>
             </header>
         </div>
@@ -289,7 +290,10 @@
                 }
             });
         }
-
+        $(".tm-site-title").click(function () {
+            document.cookie = 'AspNetCore.Culture=en-US';
+            location.reload();
+        });
         $(document).ready(function () {
 
             // Set first page
@@ -391,4 +395,4 @@
         }
     </script>
 </body>
-</html>
+</html> 

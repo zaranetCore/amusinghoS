@@ -310,6 +310,14 @@
         "runtime": {
           "amusinghoS.App.dll": {}
         },
+        "resources": {
+          "en-Us/amusinghoS.App.resources.dll": {
+            "locale": "en-Us"
+          },
+          "zh-CN/amusinghoS.App.resources.dll": {
+            "locale": "zh-CN"
+          }
+        },
         "compile": {
           "amusinghoS.App.dll": {}
         }
