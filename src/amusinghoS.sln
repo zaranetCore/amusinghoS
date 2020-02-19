@@ -5,9 +5,16 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{60900133-103B-43AE-80A7-19013397A562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "amusinghoS.EntityData", "amusinghoS.Entity\amusinghoS.EntityData.csproj", "{E56B1EC0-3822-4A00-B41C-4ECEC430E7A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusinghoS.EntityData", "amusinghoS.Entity\amusinghoS.EntityData.csproj", "{E56B1EC0-3822-4A00-B41C-4ECEC430E7A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusinghoS.App", "amusinghoS.App\amusinghoS.App.csproj", "{65F09622-527D-406A-8CFA-72711EF59326}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{84582A1D-C0BA-4EFC-929C-83767E72E6EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "githubImg", "githubImg", "{DE42FABF-8224-440E-A3EC-EE5B295320F7}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\haozi zhang\AppData\Roaming\Tencent\QQ\Temp\amusighoS_V01.png = C:\Users\haozi zhang\AppData\Roaming\Tencent\QQ\Temp\amusighoS_V01.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +37,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E56B1EC0-3822-4A00-B41C-4ECEC430E7A8} = {60900133-103B-43AE-80A7-19013397A562}
 		{65F09622-527D-406A-8CFA-72711EF59326} = {60900133-103B-43AE-80A7-19013397A562}
+		{DE42FABF-8224-440E-A3EC-EE5B295320F7} = {84582A1D-C0BA-4EFC-929C-83767E72E6EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D0CFC75-5BAE-4CE5-AB94-DB27C9CA5B2A}
