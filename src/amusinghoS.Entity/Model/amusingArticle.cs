@@ -12,5 +12,6 @@ namespace amusinghoS.EntityData.Model
         public Guid articleId { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
+        public string Description { get; set; }
     }
 }

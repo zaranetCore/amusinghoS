@@ -35,6 +35,9 @@ namespace amusinghoS.EntityData.Migrations
                     b.Property<string>("DeleteTime")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("Image")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 

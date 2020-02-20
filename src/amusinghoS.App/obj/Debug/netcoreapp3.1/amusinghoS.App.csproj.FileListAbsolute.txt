@@ -68,8 +68,6 @@ E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.csproj.CopyComplete
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\en-Us\amusinghoS.App.resources.dll
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\zh-CN\amusinghoS.App.resources.dll
-E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Home.Index.en-Us.resources
-E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Home.Index.zh-CN.resources
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.csproj.GenerateResource.cache
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\en-Us\amusinghoS.App.resources.dll
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\zh-CN\amusinghoS.App.resources.dll
@@ -147,5 +145,8 @@ E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\tr\Microsoft.Co
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.MvcApplicationPartsAssemblyInfo.cache
-E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\Life\Index.cshtml.g.cs
-E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\Home\Page.cshtml.g.cs
+E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\Travel\Index.cshtml.g.cs
+E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Home.Index.en-Us.resources
+E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Home.Index.zh-CN.resources
+E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Shared._Layout.en-Us.resources
+E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Shared._Layout.zh-CN.resources

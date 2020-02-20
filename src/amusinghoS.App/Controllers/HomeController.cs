@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using amusinghoS.Models;
+using amusinghoS.Service;
 
 namespace amusinghoS.Controllers
 {
@@ -23,10 +24,9 @@ namespace amusinghoS.Controllers
 
             return View();
         }
-        [Route("/Page/{id}")]
-        public IActionResult Page(int id)
+        [Route("/Index/{id}")]
+        public IActionResult Index(int id)
         {
-
             ViewData["page"] = id;
             return View();
         }

@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +10,7 @@
     <link rel="stylesheet" href="~/css/spectre.min.css" />
     <link rel="stylesheet" href="~/css/style.min.css" />
     <link rel="stylesheet" href="~/css/thea.min.css" />
+    <script src="~/js/amusinghoSJquery.js"></script>
 </head>
 <body>
     <div class="thea">
@@ -55,18 +59,47 @@
         <main role="main" class="pb-3 thea-body">
             @RenderBody()
         </main>
+        <footer class="thea-footer">
+            <div class="container text-center">
+                <nav class="footer-nav">
+                    <a href="/about">关于</a>
+                    <span class="divider-dot">·</span>
+                    <a href="http://forerunner.cnblogs.com/" target="_blank">技术</a>
+                    <span class="divider-dot">·</span>
+                    <a href="/about">联系</a>
+                    <span class="divider-dot">·</span>
+                    <a href="/links">友链</a>
+                </nav>
+                <nav class="footer-nav">
+                    Your Can Change Web Language：
+                    <select class="form-select select-sm select-inline" id="language">
+                        <option value="0">Setting</option>
+                        <option value="1">Chinese</option>
+                        <option value="2">English</option>
+                    </select>
+                </nav>
+                <section class="copyright"> @Localizer["section1"]  <a href="https://github.com/zaranetCore/amusinghoS"> | GitHub</a></section>
+                <section class="copyright">Server use Alibaba Cloud  <a>Author:ZaraNet</a></section>
+                <section class="copyright">Thanks to Microsoft for providing .NET Core related technology</section>
+                <section class="copyright">Website is currently hosted using .NET Core 3.1</section>
+            </div>
+        </footer>
     </div>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
 <script>
-    $("#en").click(function () {
-        document.cookie = 'CULTURE=en-US';
-        location.reload();
-    });
-    $("#zh").click(function () {
-        document.cookie = 'CULTURE=zh-CN';
-        location.reload();
+    $(function () {
+        $("#language").change(function (e) {
+            var opt = $("#language").val();
+            if (opt == 1) {
+                document.cookie = 'CULTURE=zh-CN';
+                location.reload();
+            } else if(opt == 2) {
+                document.cookie = 'CULTURE=en-US';
+                location.reload();
+            }
+        });
     });
 </script>
