@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "3.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.1",
-          "Pomelo.EntityFrameworkCore.MySql": "3.1.1"
+          "Pomelo.EntityFrameworkCore.MySql": "3.1.1",
+          "amusinghoS.Shared": "1.0.0"
         },
         "runtime": {
           "amusinghoS.EntityData.dll": {}
@@ -252,7 +253,12 @@
       },
       "System.Collections.Immutable/1.7.0": {},
       "System.ComponentModel.Annotations/4.7.0": {},
-      "System.Diagnostics.DiagnosticSource/4.7.0": {}
+      "System.Diagnostics.DiagnosticSource/4.7.0": {},
+      "amusinghoS.Shared/1.0.0": {
+        "runtime": {
+          "amusinghoS.Shared.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -449,6 +455,11 @@
       "sha512": "sha512-oJjw3uFuVDJiJNbCD8HB4a2p3NYLdt1fiT5OGsPLw+WTOuG0KpP4OXelMmmVKpClueMsit6xOlzy4wNKQFiBLg==",
       "path": "system.diagnostics.diagnosticsource/4.7.0",
       "hashPath": "system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512"
+    },
+    "amusinghoS.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

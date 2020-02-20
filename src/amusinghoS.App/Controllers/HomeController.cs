@@ -20,18 +20,15 @@ namespace amusinghoS.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
-
-        public IActionResult Privacy()
+        [Route("/Page/{id}")]
+        public IActionResult Page(int id)
         {
+
+            ViewData["page"] = id;
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

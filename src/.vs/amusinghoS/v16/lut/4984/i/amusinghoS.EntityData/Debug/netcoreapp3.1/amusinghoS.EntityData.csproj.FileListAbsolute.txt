@@ -1,0 +1,10 @@
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.exe
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.deps.json
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.runtimeconfig.json
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.runtimeconfig.dev.json
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.dll
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.csprojAssemblyReference.cache
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.AssemblyInfoInputs.cache
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.AssemblyInfo.cs
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.csproj.CopyComplete
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.EntityData\Debug\netcoreapp3.1\amusinghoS.EntityData.dll

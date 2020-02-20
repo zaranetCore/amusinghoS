@@ -1,0 +1,11 @@
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghos.xUnit\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghos.xUnit\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghos.xUnit\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghos.xUnit\Debug\netcoreapp3.1\amusinghos.xUnit.deps.json
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghos.xUnit\Debug\netcoreapp3.1\amusinghos.xUnit.runtimeconfig.json
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghos.xUnit\Debug\netcoreapp3.1\amusinghos.xUnit.runtimeconfig.dev.json
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghos.xUnit\Debug\netcoreapp3.1\amusinghos.xUnit.dll
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghos.xUnit\Debug\netcoreapp3.1\amusinghos.xUnit.AssemblyInfoInputs.cache
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghos.xUnit\Debug\netcoreapp3.1\amusinghos.xUnit.AssemblyInfo.cs
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghos.xUnit\Debug\netcoreapp3.1\amusinghos.xUnit.csproj.CopyComplete
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghos.xUnit\Debug\netcoreapp3.1\amusinghos.xUnit.dll

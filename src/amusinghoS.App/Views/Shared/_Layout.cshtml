@@ -4,58 +4,58 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] </title>
+    <link rel="stylesheet" href="~/css/spectre.min.css" />
+    <link rel="stylesheet" href="~/css/style.min.css" />
+    <link rel="stylesheet" href="~/css/thea.min.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">Navbar</a>
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fuck</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Book</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
-                                Language
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation">
-                                    <a id="en">English</a>
-                                </li>
-                                <li role="presentation">
-                                    <a id="zh">Chinese</a>
-                                </li>
-                            </ul>
+    <div class="thea">
+        <header>
+            <div class="thea">
+                <div class="thea-header">
+                    <div class="container">
+                        <div class="navbar">
+                            <div class="navbar-section">
+                                <a href="https://alexinea.com/" class="logo" alt="Alexinea's Blog" rel="home">ZaraNet</a>
+                            </div>
+                            <div class="navbar-center hide-sm">
+                                <ul class="nav">
+                                    <li class="nav-item"><a href="/">首页</a></li>
+                                    <li class="nav-item"><a href="http://forerunner.cnblogs.com/" target="_blank" title="我的技术博客">技术</a></li>
+                                    <li class="nav-item"><a href="https://github.com/zaranetCore" target="_blank" title="我的 GitHub">项目</a></li>
+                                    <li class="nav-item"><a href="https://alexinea.com/tag/books-list/" title="书单来了">书单</a></li>
+                                    <li class="nav-item"><a href="https://alexinea.com/tag/books-list/" title="书单来了">旅行地图</a></li>
+                                    <li class="nav-item"><a href="https://alexinea.com/tag/books-list/" title="书单来了">关于我</a></li>
+                                    <li class="nav-item"><a href="https://alexinea.com/tag/books-list/" title="书单来了">公用聊天室</a></li>
+                                </ul>
+                            </div>
+                            <div class="navbar-section">
+
+                                <div id="search" class="search">
+                                    <form method="get" class="search-form" name="searchform" action="https://alexinea.com/">
+                                        <input type="text" class="search-input form-input" value="" placeholder="搜索" name="s">
+                                        <input type="submit" class="search-btn btn btn-link" value="">
+                                    </form>
+                                </div>
+                                <a class="social-button hide-sm" href="https://twitter.com/zaranet" target="_blank">
+                                    <img src="~/img/twitter.svg">
+                                </a>
+                                <a class="social-button hide-sm" href="https://weibo.com/zaranet" target="_blank">
+                                    <img src="~/img/weibo.svg">
+                                </a>
+                                <a class="rss-button hide-sm" href="https://alexinea.com/feed/" target="_blank">
+                                    <img src="~/img/rss.svg">
+                                </a>
+                            </div>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+        </header>
+        <main role="main" class="pb-3 thea-body">
             @RenderBody()
         </main>
-    </div>  
+    </div>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>

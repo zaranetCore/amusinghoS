@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using amusinghoS.EntityData.Model;
+using amusinghoS.Shared;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore;
 
@@ -10,10 +11,14 @@ namespace amusinghoS.EntityData
     public class amusinghoSDbContext : DbContext
     {
         public DbSet<amusingHosUser> amusingHosUsers { get; set; }
+        public DbSet<amusingArticle> amusingArticles { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
+            string connection = DESEncryptHelper.Decrypt(
+                    "wHMoKdCHCsMzxDTTN9+KOGSDC4JDdwxpukgfD+OGDS6W10AAz9lZac3QctGhAr+o1KGJbkuCLwdT4DXj/EM6eLnLKeVRATxDh21b0Jumpb8="
+                , "12345678");
             dbContextOptionsBuilder.UseMySql(
-                connectionString: "server=39.104.53.29;uid=zaranet;pwd=123456;database=amusinghoS");
+                connectionString: connection);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

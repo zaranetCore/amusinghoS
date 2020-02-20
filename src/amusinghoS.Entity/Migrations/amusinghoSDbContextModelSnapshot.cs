@@ -17,6 +17,35 @@ namespace amusinghoS.EntityData.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("amusinghoS.EntityData.Model.amusingArticle", b =>
+                {
+                    b.Property<Guid>("articleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("CreateTime")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("CreateUserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("DeleteId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("DeleteTime")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("articleId");
+
+                    b.ToTable("amusingArticles");
+                });
+
             modelBuilder.Entity("amusinghoS.EntityData.Model.amusingHosUser", b =>
                 {
                     b.Property<Guid>("userId")

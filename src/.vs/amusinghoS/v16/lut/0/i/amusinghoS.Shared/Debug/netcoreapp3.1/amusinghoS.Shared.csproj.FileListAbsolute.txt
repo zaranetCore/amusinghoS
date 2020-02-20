@@ -1,0 +1,7 @@
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghoS.Shared\Debug\netcoreapp3.1\amusinghoS.Shared.deps.json
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\b\amusinghoS.Shared\Debug\netcoreapp3.1\amusinghoS.Shared.dll
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.Shared\Debug\netcoreapp3.1\amusinghoS.Shared.csprojAssemblyReference.cache
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.Shared\Debug\netcoreapp3.1\amusinghoS.Shared.AssemblyInfoInputs.cache
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.Shared\Debug\netcoreapp3.1\amusinghoS.Shared.AssemblyInfo.cs
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.Shared\Debug\netcoreapp3.1\amusinghoS.Shared.csproj.CopyComplete
+E:\Project\amusinghoS\src\.vs\amusinghoS\v16\lut\0\i\amusinghoS.Shared\Debug\netcoreapp3.1\amusinghoS.Shared.dll

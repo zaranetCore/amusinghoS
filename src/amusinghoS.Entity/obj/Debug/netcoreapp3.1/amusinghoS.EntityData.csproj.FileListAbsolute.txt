@@ -30,3 +30,6 @@ E:\Project\amusinghoS\src\amusinghoS.Entity\bin\Debug\netcoreapp3.1\Newtonsoft.J
 E:\Project\amusinghoS\src\amusinghoS.Entity\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 E:\Project\amusinghoS\src\amusinghoS.Entity\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 E:\Project\amusinghoS\src\amusinghoS.Entity\obj\Debug\netcoreapp3.1\amusinghoS.EntityData.csproj.CopyComplete
+E:\Project\amusinghoS\src\amusinghoS.Entity\bin\Debug\netcoreapp3.1\amusinghoS.Shared.dll
+E:\Project\amusinghoS\src\amusinghoS.Entity\bin\Debug\netcoreapp3.1\amusinghoS.Shared.pdb
+E:\Project\amusinghoS\src\amusinghoS.Entity\obj\Debug\netcoreapp3.1\amusinghoS.EntityData.csprojAssemblyReference.cache
