@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -21,6 +21,10 @@
 
   <ItemGroup>
     <Folder Include="ModelDto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\amusinghoS.Shared\amusinghoS.Shared.csproj" />
   </ItemGroup>
 
 </Project>

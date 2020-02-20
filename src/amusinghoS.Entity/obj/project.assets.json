@@ -309,6 +309,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "amusinghoS.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/amusinghoS.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/amusinghoS.Shared.dll": {}
+        }
       }
     }
   },
@@ -924,13 +934,19 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "amusinghoS.Shared/1.0.0": {
+      "type": "project",
+      "path": "../amusinghoS.Shared/amusinghoS.Shared.csproj",
+      "msbuildProject": "../amusinghoS.Shared/amusinghoS.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore.Design >= 3.1.1",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
-      "Pomelo.EntityFrameworkCore.MySql >= 3.1.1"
+      "Pomelo.EntityFrameworkCore.MySql >= 3.1.1",
+      "amusinghoS.Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -958,7 +974,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Project\\amusinghoS\\src\\amusinghoS.Shared\\amusinghoS.Shared.csproj": {
+              "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Shared\\amusinghoS.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

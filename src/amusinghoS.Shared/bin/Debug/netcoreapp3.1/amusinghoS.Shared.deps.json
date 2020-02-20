@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "amusinghoS.Shared/1.0.0": {
+        "runtime": {
+          "amusinghoS.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "amusinghoS.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
