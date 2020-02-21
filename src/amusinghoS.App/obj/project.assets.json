@@ -6733,8 +6733,8 @@
     },
     "amusinghoS.Services/1.0.0": {
       "type": "project",
-      "path": "../amusinghoS.IRepository/amusinghoS.Services.csproj",
-      "msbuildProject": "../amusinghoS.IRepository/amusinghoS.Services.csproj"
+      "path": "../amusinghoS.Services/amusinghoS.Services.csproj",
+      "msbuildProject": "../amusinghoS.Services/amusinghoS.Services.csproj"
     },
     "amusinghoS.Shared/1.0.0": {
       "type": "project",
@@ -6778,8 +6778,8 @@
             "E:\\Project\\amusinghoS\\src\\amusinghoS.Entity\\amusinghoS.EntityData.csproj": {
               "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Entity\\amusinghoS.EntityData.csproj"
             },
-            "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj": {
-              "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj"
+            "E:\\Project\\amusinghoS\\src\\amusinghoS.Services\\amusinghoS.Services.csproj": {
+              "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Services\\amusinghoS.Services.csproj"
             }
           }
         }
