@@ -27,8 +27,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\Project\\amusinghoS\\src\\amusinghoS.Repository\\amusinghoS.Service.csproj": {
-                "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Repository\\amusinghoS.Service.csproj"
+              "E:\\Project\\amusinghoS\\src\\amusinghoS.Entity\\amusinghoS.EntityData.csproj": {
+                "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Entity\\amusinghoS.EntityData.csproj"
+              },
+              "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj": {
+                "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj"
               }
             }
           }
@@ -143,14 +146,14 @@
         }
       }
     },
-    "E:\\Project\\amusinghoS\\src\\amusinghoS.Repository\\amusinghoS.Service.csproj": {
+    "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\amusinghoS\\src\\amusinghoS.Repository\\amusinghoS.Service.csproj",
-        "projectName": "amusinghoS.Service",
-        "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Repository\\amusinghoS.Service.csproj",
+        "projectUniqueName": "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj",
+        "projectName": "amusinghoS.Services",
+        "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj",
         "packagesPath": "C:\\Users\\haozi zhang\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Repository\\obj\\",
+        "outputPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\haozi zhang\\AppData\\Roaming\\NuGet\\NuGet.Config",

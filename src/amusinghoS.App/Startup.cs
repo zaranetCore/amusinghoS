@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using amusinghoS.App.Models.amusingConfigModel;
+using amusinghoS.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
@@ -41,6 +42,8 @@ namespace amusinghoS
                            new X_DOVERequestCultureProvider()
                         };
                 });
+            //注入工作单元
+            services.AddTransient(typeof(UnitOfWork));
             services.AddControllersWithViews();
         }
 

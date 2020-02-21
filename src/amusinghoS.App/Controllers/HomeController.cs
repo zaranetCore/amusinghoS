@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using amusinghoS.Models;
-using amusinghoS.Service;
+using amusinghoS.EntityData.Model;
+using amusinghoS.EntityData;
+using System.Linq;
+using amusinghoS.Services;
 
 namespace amusinghoS.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        UnitOfWork _unitWork;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(UnitOfWork unitOfWork)
         {
-            _logger = logger;
+            _unitWork = unitOfWork;
         }
 
         public IActionResult Index()
         {
-
             return View();
         }
         [Route("/Index/{id}")]

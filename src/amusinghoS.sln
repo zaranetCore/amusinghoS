@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusinghoS.Shared", "amusin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusinghos.xUnit", "amusinghos.Xunit\amusinghos.xUnit.csproj", "{15672F63-68F5-4697-877C-FFDD933A9048}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "amusinghoS.Service", "amusinghoS.Repository\amusinghoS.Service.csproj", "{54DE02B6-66E8-4602-BD6B-43CA0D32403C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "amusinghoS.Services", "amusinghoS.IRepository\amusinghoS.Services.csproj", "{01977FAF-2EF6-47A9-8C7C-EB11C680B958}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,10 +44,10 @@ Global
 		{15672F63-68F5-4697-877C-FFDD933A9048}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15672F63-68F5-4697-877C-FFDD933A9048}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15672F63-68F5-4697-877C-FFDD933A9048}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54DE02B6-66E8-4602-BD6B-43CA0D32403C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54DE02B6-66E8-4602-BD6B-43CA0D32403C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54DE02B6-66E8-4602-BD6B-43CA0D32403C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54DE02B6-66E8-4602-BD6B-43CA0D32403C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01977FAF-2EF6-47A9-8C7C-EB11C680B958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01977FAF-2EF6-47A9-8C7C-EB11C680B958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01977FAF-2EF6-47A9-8C7C-EB11C680B958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01977FAF-2EF6-47A9-8C7C-EB11C680B958}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,7 +58,7 @@ Global
 		{DE42FABF-8224-440E-A3EC-EE5B295320F7} = {84582A1D-C0BA-4EFC-929C-83767E72E6EA}
 		{1DA5291F-DD28-4B21-9B76-AB74B2161AA2} = {60900133-103B-43AE-80A7-19013397A562}
 		{15672F63-68F5-4697-877C-FFDD933A9048} = {60900133-103B-43AE-80A7-19013397A562}
-		{54DE02B6-66E8-4602-BD6B-43CA0D32403C} = {60900133-103B-43AE-80A7-19013397A562}
+		{01977FAF-2EF6-47A9-8C7C-EB11C680B958} = {60900133-103B-43AE-80A7-19013397A562}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D0CFC75-5BAE-4CE5-AB94-DB27C9CA5B2A}

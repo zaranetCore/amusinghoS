@@ -6,6 +6,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\amusinghoS.Repository\amusinghoS.Service.csproj" />
+    <ProjectReference Include="..\amusinghoS.Entity\amusinghoS.EntityData.csproj" />
+    <ProjectReference Include="..\amusinghoS.IRepository\amusinghoS.Services.csproj" />
   </ItemGroup>
 </Project>

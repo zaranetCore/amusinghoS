@@ -2037,17 +2037,17 @@
           "bin/placeholder/amusinghoS.EntityData.dll": {}
         }
       },
-      "amusinghoS.Service/1.0.0": {
+      "amusinghoS.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "amusinghoS.EntityData": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/amusinghoS.Service.dll": {}
+          "bin/placeholder/amusinghoS.Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/amusinghoS.Service.dll": {}
+          "bin/placeholder/amusinghoS.Services.dll": {}
         }
       },
       "amusinghoS.Shared/1.0.0": {
@@ -6731,10 +6731,10 @@
       "path": "../amusinghoS.Entity/amusinghoS.EntityData.csproj",
       "msbuildProject": "../amusinghoS.Entity/amusinghoS.EntityData.csproj"
     },
-    "amusinghoS.Service/1.0.0": {
+    "amusinghoS.Services/1.0.0": {
       "type": "project",
-      "path": "../amusinghoS.Repository/amusinghoS.Service.csproj",
-      "msbuildProject": "../amusinghoS.Repository/amusinghoS.Service.csproj"
+      "path": "../amusinghoS.IRepository/amusinghoS.Services.csproj",
+      "msbuildProject": "../amusinghoS.IRepository/amusinghoS.Services.csproj"
     },
     "amusinghoS.Shared/1.0.0": {
       "type": "project",
@@ -6745,7 +6745,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.1",
-      "amusinghoS.Service >= 1.0.0"
+      "amusinghoS.EntityData >= 1.0.0",
+      "amusinghoS.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6774,8 +6775,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\Project\\amusinghoS\\src\\amusinghoS.Repository\\amusinghoS.Service.csproj": {
-              "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Repository\\amusinghoS.Service.csproj"
+            "E:\\Project\\amusinghoS\\src\\amusinghoS.Entity\\amusinghoS.EntityData.csproj": {
+              "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Entity\\amusinghoS.EntityData.csproj"
+            },
+            "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj": {
+              "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.IRepository\\amusinghoS.Services.csproj"
             }
           }
         }

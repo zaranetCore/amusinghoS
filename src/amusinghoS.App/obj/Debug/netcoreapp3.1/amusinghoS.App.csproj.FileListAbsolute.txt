@@ -150,3 +150,15 @@ E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Home.Index.zh-CN.resources
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Shared._Layout.en-Us.resources
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.Resources.Views.Shared._Layout.zh-CN.resources
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.EntityData.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Shared.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.EntityData.pdb
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Shared.pdb
