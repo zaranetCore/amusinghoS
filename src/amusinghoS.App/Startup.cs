@@ -4,11 +4,14 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using amusinghoS.App.Models.amusingConfigModel;
+using amusinghoS.EntityData;
 using amusinghoS.Services;
+using amusinghoS.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -43,6 +46,9 @@ namespace amusinghoS
                         };
                 });
             //注入工作单元
+            services.AddDbContext<amusinghoSDbContext>(options => options.UseMySql(DESEncryptHelper.Decrypt(
+                    "wHMoKdCHCsMzxDTTN9+KOGSDC4JDdwxpukgfD+OGDS6W10AAz9lZac3QctGhAr+o1KGJbkuCLwdT4DXj/EM6eLnLKeVRATxDh21b0Jumpb8="
+                , "12345678")));
             services.AddTransient(typeof(UnitOfWork));
             services.AddControllersWithViews();
         }

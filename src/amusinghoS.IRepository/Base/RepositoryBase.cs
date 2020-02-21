@@ -1,12 +1,12 @@
 ﻿using amusinghoS.EntityData;
 using amusinghoS.EntityData.Base;
+using amusinghoS.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace amusinghoS.Services.Base
@@ -262,27 +262,38 @@ namespace amusinghoS.Services.Base
         public async Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate = null, string ordering = "", bool isNoTracking = true)
         {
             var data = isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate);
+            if (!string.IsNullOrEmpty(ordering))
+            {
+                data = data.OrderByBatch(ordering);
+            }
             return await data.ToListAsync();
         }
         public List<T> GetList(Expression<Func<T, bool>> predicate = null, string ordering = "", bool isNoTracking = true)
         {
+            var data = isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate);
+            if (!string.IsNullOrEmpty(ordering))
+            {
+                data = data.OrderByBatch(ordering);
+            }
+            return data.ToList();
+        }
+        public List<T> GetAll(Expression<Func<T, bool>> predicate = null, bool isNoTracking = true)
+        {
+            if (predicate == null)
+                predicate = c => true;
             var data = isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate);
             return data.ToList();
         }
         public async Task<IQueryable<T>> LoadAsync(Expression<Func<T, bool>> predicate = null, bool isNoTracking = true)
         {
             if (predicate == null)
-            {
                 predicate = c => true;
-            }
             return await Task.Run(() => isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate));
         }
         public IQueryable<T> Load(Expression<Func<T, bool>> predicate = null, bool isNoTracking = true)
         {
             if (predicate == null)
-            {
                 predicate = c => true;
-            }
             return isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate);
         }
         #region 分页查找

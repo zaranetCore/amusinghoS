@@ -10,15 +10,26 @@ namespace amusinghoS.EntityData
 {
     public class amusinghoSDbContext : DbContext
     {
+        #region 构造方法
+        public amusinghoSDbContext(DbContextOptions<amusinghoSDbContext> options) : base(options) { }
+        public amusinghoSDbContext() { } //非注入构造方式
+        #endregion
+
         public DbSet<amusingHosUser> amusingHosUsers { get; set; }
         public DbSet<amusingArticle> amusingArticles { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
-            string connection = DESEncryptHelper.Decrypt(
-                    "wHMoKdCHCsMzxDTTN9+KOGSDC4JDdwxpukgfD+OGDS6W10AAz9lZac3QctGhAr+o1KGJbkuCLwdT4DXj/EM6eLnLKeVRATxDh21b0Jumpb8="
-                , "12345678");
-            dbContextOptionsBuilder.UseMySql(
-                connectionString: connection);
+            base.OnConfiguring(dbContextOptionsBuilder);
+
+            if (!dbContextOptionsBuilder.IsConfigured)
+            {
+                string connection = DESEncryptHelper.Decrypt(
+                        "wHMoKdCHCsMzxDTTN9+KOGSDC4JDdwxpukgfD+OGDS6W10AAz9lZac3QctGhAr+o1KGJbkuCLwdT4DXj/EM6eLnLKeVRATxDh21b0Jumpb8="
+                    , "12345678");
+                dbContextOptionsBuilder.UseMySql(
+                    connectionString: connection);
+            }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

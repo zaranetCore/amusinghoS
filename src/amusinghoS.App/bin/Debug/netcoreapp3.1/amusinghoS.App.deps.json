@@ -26,6 +26,7 @@
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
           "amusinghoS.EntityData": "1.0.0",
+          "amusinghoS.Services": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1717,6 +1718,17 @@
         },
         "compile": {
           "amusinghoS.EntityData.dll": {}
+        }
+      },
+      "amusinghoS.Services/1.0.0": {
+        "dependencies": {
+          "amusinghoS.EntityData": "1.0.0"
+        },
+        "runtime": {
+          "amusinghoS.Services.dll": {}
+        },
+        "compile": {
+          "amusinghoS.Services.dll": {}
         }
       },
       "amusinghoS.Shared/1.0.0": {
@@ -4317,6 +4329,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "amusinghoS.EntityData/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "amusinghoS.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

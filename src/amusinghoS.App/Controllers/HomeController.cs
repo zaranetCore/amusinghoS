@@ -16,9 +16,10 @@ namespace amusinghoS.Controllers
         {
             _unitWork = unitOfWork;
         }
-
         public IActionResult Index()
         {
+            var list = _unitWork.amusingArticleRepository.GetAll();
+            var asd = _unitWork.amusingArticleRepository.Load();
             return View();
         }
         [Route("/Index/{id}")]
