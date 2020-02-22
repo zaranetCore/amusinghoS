@@ -1,0 +1,5 @@
+E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.Redis.deps.json
+E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.Redis.dll
+E:\Project\amusinghoS\src\amusinghoS.Redis\obj\Debug\netcoreapp3.1\amusinghoS.Redis.csprojAssemblyReference.cache
+E:\Project\amusinghoS\src\amusinghoS.Redis\obj\Debug\netcoreapp3.1\amusinghoS.Redis.AssemblyInfoInputs.cache
+E:\Project\amusinghoS\src\amusinghoS.Redis\obj\Debug\netcoreapp3.1\amusinghoS.Redis.AssemblyInfo.cs

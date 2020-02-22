@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "amusinghoS.Redis/1.0.0": {
+        "runtime": {
+          "amusinghoS.Redis.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "amusinghoS.Redis/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
