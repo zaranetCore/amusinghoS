@@ -256,11 +256,15 @@ namespace amusinghoS.Services.Base
         }
         public async Task<T> GetAsync(Expression<Func<T, bool>> predicate = null, bool isNoTracking = true)
         {
+            if (predicate == null)
+                predicate = c => true;
             var data = isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate);
             return await data.FirstOrDefaultAsync();
         }
         public async Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate = null, string ordering = "", bool isNoTracking = true)
         {
+            if (predicate == null)
+                predicate = c => true;
             var data = isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate);
             if (!string.IsNullOrEmpty(ordering))
             {
@@ -270,6 +274,8 @@ namespace amusinghoS.Services.Base
         }
         public List<T> GetList(Expression<Func<T, bool>> predicate = null, string ordering = "", bool isNoTracking = true)
         {
+            if (predicate == null)
+                predicate = c => true;
             var data = isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate);
             if (!string.IsNullOrEmpty(ordering))
             {
@@ -306,12 +312,9 @@ namespace amusinghoS.Services.Base
         /// <param name="pageSize">每页大小</param>
         /// <param name="isOrder">排序正反</param>
         /// <returns></returns>
-        public async Task<PageData<T>> GetPageAsync<TKey>(Expression<Func<T, bool>> whereLambda, Expression<Func<T, TKey>> orderBy, int pageIndex, int pageSize, bool isOrder = true, bool isNoTracking = true)
+        public async Task<PageData<T>> GetPageAsync<TKey>(int pageIndex, int pageSize,Expression<Func<T, bool>> whereLambda = null, bool isOrder = true, bool isNoTracking = true)
         {
-            IQueryable<T> data = isOrder ?
-                _dbSet.OrderBy(orderBy) :
-                _dbSet.OrderByDescending(orderBy);
-
+            IQueryable<T> data = _dbSet;
             if (whereLambda != null)
             {
                 data = isNoTracking ? data.Where(whereLambda).AsNoTracking() : data.Where(whereLambda);
