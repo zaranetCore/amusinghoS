@@ -1,31 +1,39 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using amusinghoS.EntityData.Model
+@using amusinghoS.Shared
 @inject IViewLocalizer Localizer
-
+@model List<amusingArticle>
 
 <div class="container">
     <div class="columns">
-        <div class="column col-4 col-md-6 col-sm-12">
-            <article id="post-669" class="card card-post">
-                <div class="card-image">
-                    <a class="card-link" href="https://alexinea.com/2020/02/humans-are-underrated/">
-                        <div class="post-card-image" style="background-image: url(static/images/20200218.png)"></div>
-                    </a>
+
+        @{
+            foreach (var item in Model)
+            {
+                <div class="column col-4 col-md-6 col-sm-12">
+                    <article id="post-669" class="card card-post">
+                        <div class="card-image">
+                            <a class="card-link">
+                                <div class="post-card-image" style="background-image: url(@item.Image)"></div>
+                            </a>
+                        </div>
+                        <div class="card-header">
+                            <a class="card-link" title="@item.Title">
+                                <h2 class="post-card-title"> @item.Title </h2>
+                                <p>@item.Description</p>
+                            </a>
+                        </div>
+                        <footer class="card-footer">
+                            <time class="post-card-date">@item.CreateTime @Html.DisplayName(DatetimeHelper.GetPeriod(item.CreateTime))</time>
+                        </footer>
+                    </article>
                 </div>
-                <div class="card-header">
-                    <a class="card-link" href="https://alexinea.com/2020/02/humans-are-underrated/" title="阅读分享《不会被机器替代的人》：不言而喻是你我">
-                        <h2 class="post-card-title">阅读分享《不会被机器替代的人》：不言而喻是你我</h2>
-                        <p>如果说此刻有什么东西正深刻改变着我们的世界，那毫无疑问，答案是人工智能的发展及其应用。尽管人工智能技术在上世纪中叶被提出，但真正得到突飞猛进发展还是在二十一世纪的第二个十年间，人工…</p>
-                    </a>
-                </div>
-                <footer class="card-footer">
-                    <time class="post-card-date">2020 年 2 月 18 日,  3:54 下午</time>
-                </footer>
-            </article>
-        </div>
+            }
+        }
     </div>
     <div class="columns">
         <div class="column">
-            <ul class="pagination"><li class="page-item active"><a href="https://alexinea.com/">1</a></li><li class="page-item"><a href="https://alexinea.com/page/2/">2</a></li><li class="page-item"><a href="https://alexinea.com/page/3/">3</a></li><li class="page-item"><a href="https://alexinea.com/page/4/">4</a></li><li class="page-item"><span>...</span></li><li class="page-item"><a href="https://alexinea.com/page/6/">6</a></li><li class="page-item"><a href="https://alexinea.com/page/2/">&gt;</a></li></ul>
+
         </div>
     </div>
 </div>

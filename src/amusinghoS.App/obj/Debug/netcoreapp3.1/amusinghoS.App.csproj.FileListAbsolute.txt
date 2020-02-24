@@ -164,3 +164,7 @@ E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Enti
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Shared.pdb
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Services.dll
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Services.pdb
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\CSRedisCore.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\SafeObjectPool.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Redis.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Redis.pdb

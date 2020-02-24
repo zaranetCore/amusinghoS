@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace amusinghoS.EntityData.Base
@@ -13,5 +14,10 @@ namespace amusinghoS.EntityData.Base
         public string CreateUserId { get; set; }
         public DateTime DelTime { get; set; }
         public string DeleteId { get; set; }
+        public amusingBase()
+        {
+            this.CreateTime = DateTime.Now;
+            this.CreateUserId = "Testadmin";
+        }
     }
 }

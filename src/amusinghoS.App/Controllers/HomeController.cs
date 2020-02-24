@@ -18,9 +18,9 @@ namespace amusinghoS.Controllers
         }
         public IActionResult Index()
         {
-            //var list = _unitWork.amusingArticleRepository.GetAll();
-            //var asd = _unitWork.amusingArticleRepository.Load();
-            return View();
+            //默认 8个文章
+            var list = _unitWork.amusingArticleRepository.GetAll().Take(8).ToList();
+            return View(list);
         }
         [Route("/Index/{id}")]
         public IActionResult Index(int id)

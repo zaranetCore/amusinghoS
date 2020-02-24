@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\amusinghoS.Entity\amusinghoS.EntityData.csproj" />
+    <ProjectReference Include="..\amusinghoS.Services\amusinghoS.Services.csproj" />
     <ProjectReference Include="..\amusinghoS.Shared\amusinghoS.Shared.csproj" />
   </ItemGroup>
 
