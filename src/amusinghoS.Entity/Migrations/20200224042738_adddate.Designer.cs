@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using amusinghoS.EntityData;
 
 namespace amusinghoS.EntityData.Migrations
 {
     [DbContext(typeof(amusinghoSDbContext))]
-    partial class amusinghoSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200224042738_adddate")]
+    partial class adddate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,11 +31,11 @@ namespace amusinghoS.EntityData.Migrations
                     b.Property<string>("CreateUserId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<DateTime>("DelTime")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("DeleteId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime>("DeleteTime")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
                         .HasColumnType("varchar(200)");

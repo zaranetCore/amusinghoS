@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using amusinghoS.EntityData;
 
 namespace amusinghoS.EntityData.Migrations
 {
     [DbContext(typeof(amusinghoSDbContext))]
-    partial class amusinghoSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200224041550_1215")]
+    partial class _1215
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,27 +25,27 @@ namespace amusinghoS.EntityData.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime(6)");
+                    b.Property<string>("CreateTime")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("CreateUserId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<DateTime>("DelTime")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("DeleteId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("DeleteTime")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("Description")
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Image")
-                        .HasColumnType("varchar(130)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("varchar(36)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("articleId");
 

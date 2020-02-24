@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using amusinghoS.App;
 using amusinghoS.App.Models.amusingConfigModel;
 using amusinghoS.EntityData;
+using amusinghoS.Redis;
 using amusinghoS.Services;
 using amusinghoS.Shared;
 using Microsoft.AspNetCore.Builder;
@@ -50,6 +52,9 @@ namespace amusinghoS
                     "wHMoKdCHCsMzxDTTN9+KOGSDC4JDdwxpukgfD+OGDS6W10AAz9lZac3QctGhAr+o1KGJbkuCLwdT4DXj/EM6eLnLKeVRATxDh21b0Jumpb8="
                 , "12345678")));
             services.AddTransient(typeof(UnitOfWork));
+            services.AddScoped<IRedisClient, CustomerRedis>();
+            //var csredis = new CSRedis.CSRedisClient("127.0.0.1:6379");
+            //RedisHelper.Initialization(csredis);//≥ı ºªØ
             services.AddControllersWithViews();
         }
 

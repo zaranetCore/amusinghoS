@@ -2,11 +2,11 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "CSRedisCore/3.4.1": {
+      "CSRedisCore/3.4.5": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "SafeObjectPool": "2.3.0",
+          "SafeObjectPool": "2.3.1",
           "System.ValueTuple": "4.5.0"
         },
         "compile": {
@@ -25,7 +25,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "SafeObjectPool/2.3.0": {
+      "SafeObjectPool/2.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/SafeObjectPool.dll": {}
@@ -46,14 +46,14 @@
     }
   },
   "libraries": {
-    "CSRedisCore/3.4.1": {
-      "sha512": "gDQ/B+3hVZTYpch6vwcTOXi0AfsCEDbxRgiWJ9NrneFq2hHha30NdflE+okZER1ILdQxVbi185OUycktTapHiQ==",
+    "CSRedisCore/3.4.5": {
+      "sha512": "qs8kLSPig3INjCsda7EcRJx3HYmeTPEZ1n0gjkF1TrTS9F8O0ePzIzeq1zIsbWLfQrVQVOAfTbbOx25uchocnQ==",
       "type": "package",
-      "path": "csrediscore/3.4.1",
+      "path": "csrediscore/3.4.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "csrediscore.3.4.1.nupkg.sha512",
+        "csrediscore.3.4.5.nupkg.sha512",
         "csrediscore.nuspec",
         "lib/net40/CSRedisCore.dll",
         "lib/net40/CSRedisCore.xml",
@@ -94,10 +94,10 @@
         "packageIcon.png"
       ]
     },
-    "SafeObjectPool/2.3.0": {
-      "sha512": "jYHFFiOWjNAspVOsPbHMPokmVDIKSiaX3wAfgQLm9WmfFtQcafVNhfhSUA7P10pl0Kqywqv/0iipB1zZXYO76g==",
+    "SafeObjectPool/2.3.1": {
+      "sha512": "kOHTBYwzOK5BfS9tZWf7q8P5Sv5qoHlSE8Rs10xocTBOnId9Hul+s9jCo/o8yQVXKDiADurtPXs4ShpFwsBDnA==",
       "type": "package",
-      "path": "safeobjectpool/2.3.0",
+      "path": "safeobjectpool/2.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -107,7 +107,7 @@
         "lib/net45/SafeObjectPool.xml",
         "lib/netstandard2.0/SafeObjectPool.dll",
         "lib/netstandard2.0/SafeObjectPool.xml",
-        "safeobjectpool.2.3.0.nupkg.sha512",
+        "safeobjectpool.2.3.1.nupkg.sha512",
         "safeobjectpool.nuspec"
       ]
     },
@@ -158,7 +158,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CSRedisCore >= 3.4.1"
+      "CSRedisCore >= 3.4.5"
     ]
   },
   "packageFolders": {
@@ -200,7 +200,7 @@
         "dependencies": {
           "CSRedisCore": {
             "target": "Package",
-            "version": "[3.4.1, )"
+            "version": "[3.4.5, )"
           }
         },
         "imports": [

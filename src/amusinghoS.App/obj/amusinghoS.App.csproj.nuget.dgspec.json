@@ -30,6 +30,9 @@
               "E:\\Project\\amusinghoS\\src\\amusinghoS.Entity\\amusinghoS.EntityData.csproj": {
                 "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Entity\\amusinghoS.EntityData.csproj"
               },
+              "E:\\Project\\amusinghoS\\src\\amusinghoS.Redis\\amusinghoS.Redis.csproj": {
+                "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Redis\\amusinghoS.Redis.csproj"
+              },
               "E:\\Project\\amusinghoS\\src\\amusinghoS.Services\\amusinghoS.Services.csproj": {
                 "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Services\\amusinghoS.Services.csproj"
               }
@@ -125,6 +128,64 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Project\\amusinghoS\\src\\amusinghoS.Redis\\amusinghoS.Redis.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Project\\amusinghoS\\src\\amusinghoS.Redis\\amusinghoS.Redis.csproj",
+        "projectName": "amusinghoS.Redis",
+        "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Redis\\amusinghoS.Redis.csproj",
+        "packagesPath": "C:\\Users\\haozi zhang\\.nuget\\packages\\",
+        "outputPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Redis\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\haozi zhang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "CSRedisCore": {
+              "target": "Package",
+              "version": "[3.4.5, )"
             }
           },
           "imports": [

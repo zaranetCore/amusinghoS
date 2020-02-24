@@ -9,9 +9,9 @@ namespace amusinghoS.EntityData.Base
     /// </summary>
     public class amusingBase
     {
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         public string CreateUserId { get; set; }
-        public string DeleteTime { get; set; }
+        public DateTime DelTime { get; set; }
         public string DeleteId { get; set; }
     }
 }
