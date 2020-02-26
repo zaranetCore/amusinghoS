@@ -3,11 +3,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Views\Home\Error.html" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\amusinghoS.Entity\amusinghoS.EntityData.csproj" />
     <ProjectReference Include="..\amusinghoS.Redis\amusinghoS.Redis.csproj" />
     <ProjectReference Include="..\amusinghoS.Services\amusinghoS.Services.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Filter\" />
   </ItemGroup>
 </Project>

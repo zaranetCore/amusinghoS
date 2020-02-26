@@ -20,13 +20,6 @@ using amusinghoS;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "E:\Project\amusinghoS\src\amusinghoS.App\Views\_ViewImports.cshtml"
-using amusinghoS.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 1 "E:\Project\amusinghoS\src\amusinghoS.App\Views\Travel\Index.cshtml"
 using Microsoft.AspNetCore.Mvc.Localization;
 
@@ -34,7 +27,7 @@ using Microsoft.AspNetCore.Mvc.Localization;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"23652d672d235566e0d6cd41fcb604ee69cf871f", @"/Views/Travel/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5fc6e60ed722a535e4115aae96858258d767279e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b6f3a858eb02eb79c196f661a0e6664bf77382bb", @"/Views/_ViewImports.cshtml")]
     public class Views_Travel_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

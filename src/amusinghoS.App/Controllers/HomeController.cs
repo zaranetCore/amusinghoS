@@ -19,6 +19,8 @@ namespace amusinghoS.Controllers
         }
         public IActionResult Index()
         {
+            throw new System.Exception("asd");
+
             //默认 8个文章
             var list = _unitWork.amusingArticleRepository.GetAll();
             ViewData["Current"] = 1;

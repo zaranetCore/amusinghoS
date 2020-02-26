@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using amusinghoS.App;
+using amusinghoS.App.Extensions;
 using amusinghoS.App.Models.amusingConfigModel;
 using amusinghoS.EntityData;
 using amusinghoS.Redis;
@@ -17,8 +17,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-
 namespace amusinghoS
 {
     public class Startup
@@ -54,7 +54,6 @@ namespace amusinghoS
             services.AddTransient(typeof(UnitOfWork));
             services.AddScoped<IRedisClient, CustomerRedis>();
             //var csredis = new CSRedis.CSRedisClient("127.0.0.1:6379");
-            //RedisHelper.Initialization(csredis);//≥ı ºªØ
             services.AddControllersWithViews();
         }
 
@@ -63,11 +62,12 @@ namespace amusinghoS
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseCustomErrorPages();
+                // app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseCustomErrorPages();
             }
             app.UseStaticFiles();
 

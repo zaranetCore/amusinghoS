@@ -19,15 +19,8 @@ using amusinghoS;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "E:\Project\amusinghoS\src\amusinghoS.App\Views\_ViewImports.cshtml"
-using amusinghoS.Models;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5fc6e60ed722a535e4115aae96858258d767279e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b6f3a858eb02eb79c196f661a0e6664bf77382bb", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

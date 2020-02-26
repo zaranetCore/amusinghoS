@@ -20,13 +20,6 @@ using amusinghoS;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "E:\Project\amusinghoS\src\amusinghoS.App\Views\_ViewImports.cshtml"
-using amusinghoS.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 1 "E:\Project\amusinghoS\src\amusinghoS.App\Views\Home\Index.cshtml"
 using Microsoft.AspNetCore.Mvc.Localization;
 
@@ -48,7 +41,7 @@ using amusinghoS.Shared;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5f8deb60da670fec10d7745bac907ae7af4fd8a5", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5fc6e60ed722a535e4115aae96858258d767279e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b6f3a858eb02eb79c196f661a0e6664bf77382bb", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<amusingArticle>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -201,7 +194,7 @@ WriteAttributeValue("", 1855, Html.DisplayName((Convert.ToInt32(ViewData["Curren
 #line hidden
 #nullable disable
             WriteLiteral("            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5f8deb60da670fec10d7745bac907ae7af4fd8a59550", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5f8deb60da670fec10d7745bac907ae7af4fd8a59377", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
