@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<script src="~/js/jquery-1.10.2.min.js"></script>
+<link href="~/Lib/MarkDown/css/editormd.css" rel="stylesheet" />
+<link href="~/Lib/MarkDown/css/editormd.preview.css" rel="stylesheet" />
+<script src="~/Lib/MarkDown/js/editormd.js"></script>
+
+<div id="test-editormd">
+    <textarea id="articleContent" style="display: none;"></textarea>
+</div>
+
+<script>
+    $(function () {
+        testEditor = editormd("test-editormd", {
+            width: "99%",
+            height: 640,
+            syncScrolling: "single",
+            path: "/Lib/MarkDown/lib/",
+            saveHTMLToTextarea: true,
+            emoji: true
+        });
+    });
+
+    function btnSave() {
+        alert("html数据：" + testEditor.getHTML());
+        alert("markdown数据：" + testEditor.getMarkdown());
+    }
+</script>
+

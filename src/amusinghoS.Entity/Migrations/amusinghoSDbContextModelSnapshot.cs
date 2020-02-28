@@ -21,7 +21,7 @@ namespace amusinghoS.EntityData.Migrations
                 {
                     b.Property<string>("articleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(48)");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime(6)");
@@ -50,11 +50,33 @@ namespace amusinghoS.EntityData.Migrations
                     b.ToTable("amusingArticles");
                 });
 
+            modelBuilder.Entity("amusinghoS.EntityData.Model.amusingArticleDetails", b =>
+                {
+                    b.Property<string>("articleDetailsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("AmusingArticlearticleId")
+                        .HasColumnType("varchar(48)");
+
+                    b.Property<string>("Html")
+                        .HasColumnType("varchar(48)");
+
+                    b.Property<DateTime>("LastUpdate")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("articleDetailsId");
+
+                    b.HasIndex("AmusingArticlearticleId");
+
+                    b.ToTable("amusingArticleDetails");
+                });
+
             modelBuilder.Entity("amusinghoS.EntityData.Model.amusingHosUser", b =>
                 {
-                    b.Property<Guid>("userId")
+                    b.Property<string>("userId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.Property<string>("Name")
                         .HasColumnType("varchar(16) CHARACTER SET utf8mb4")
@@ -67,6 +89,13 @@ namespace amusinghoS.EntityData.Migrations
                     b.HasKey("userId");
 
                     b.ToTable("amusingHosUsers");
+                });
+
+            modelBuilder.Entity("amusinghoS.EntityData.Model.amusingArticleDetails", b =>
+                {
+                    b.HasOne("amusinghoS.EntityData.Model.amusingArticle", "AmusingArticle")
+                        .WithMany()
+                        .HasForeignKey("AmusingArticlearticleId");
                 });
 #pragma warning restore 612, 618
         }

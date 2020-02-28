@@ -17,6 +17,7 @@ namespace amusinghoS.EntityData
 
         public DbSet<amusingHosUser> amusingHosUsers { get; set; }
         public DbSet<amusingArticle> amusingArticles { get; set; }
+        public DbSet<amusingArticleDetails> amusingArticleDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {

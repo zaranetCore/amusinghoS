@@ -169,3 +169,4 @@ E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\amusinghoS.Redi
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.MvcApplicationPartsAssemblyInfo.cache
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\Errors\404.cshtml.g.cs
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\Errors\500.cshtml.g.cs
+E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\MarkDown\Index.cshtml.g.cs
