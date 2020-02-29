@@ -1,15 +1,8 @@
-/*!
- * Image (upload) dialog plugin for Editor.md
- *
- * @file        image-dialog.js
- * @author      pandao
- * @version     1.3.4
- * @updateTime  2015-06-09
- * {@link       https://github.com/pandao/editor.md}
- * @license     MIT
- */
+
 
 (function() {
+
+
 
     var factory = function (exports) {
 
@@ -59,9 +52,10 @@
                                         "<label>" + imageLang.alt + "</label>" +
                                         "<input type=\"text\" value=\"" + selection + "\" data-alt />" +
                                         "<br/>" +
-                                        "<label>" + imageLang.link + "</label>" +
-                                        "<input type=\"text\" value=\"http://\" data-link />" +
-                                        "<br/>" +
+                                        //"<label>" + imageLang.link + "</label>" +
+                                        //"<input type=\"text\" value=\"http://\" data-link />" +
+                                        //"<br/>" +
+                    "<input type ='file' id='file' name='file' multiple/><input type='button' class='btn btn-success' style='cursor: pointer; ' value='上传'  onclick='upload()'/>"+
                                     ( (settings.imageUpload) ? "</form>" : "</div>");
 
                 //var imageFooterHTML = "<button class=\"" + classPrefix + "btn " + classPrefix + "image-manager-btn\" style=\"float:left;\">" + imageLang.managerButton + "</button>";
@@ -83,7 +77,8 @@
                         enter : [lang.buttons.enter, function() {
                             var url  = this.find("[data-url]").val();
                             var alt  = this.find("[data-alt]").val();
-                            var link = this.find("[data-link]").val();
+                            var link = this.find("[data-url]").val();
+                            //var link = this.find("[data-link]").val();
 
                             if (url === "")
                             {
@@ -224,4 +219,28 @@
         factory(window.editormd);
 	}
 
+
 })();
+
+
+var upload = function () {
+    var fileUpload = $("#file").get(0);//获得第一个files的名称和值
+    var files = fileUpload.files;//获取文件信息
+    var data = new FormData();//通过FormData构造函数创建一个空对象
+    for (var i = 0; i < files.length; i++) {
+        data.append(files[i].name, files[i]);//通过append方法追加数据
+    }
+    $.ajax({
+        type: "post",
+        url: "/FileUpload/UploadF",
+        contentType: false,//不要去设置Content-Type请求头
+        processData: false,//不要去处理发送的数据
+        data: data,
+        success: function (data) {
+            alert(data.message);
+        },
+        error: function () {
+            alert("上传文件出现错误！");
+        }
+    });
+}

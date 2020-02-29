@@ -15,5 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Filter\" />
+    <Folder Include="wwwroot\upfile\" />
   </ItemGroup>
 </Project>
