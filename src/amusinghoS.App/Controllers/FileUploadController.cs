@@ -19,14 +19,15 @@ namespace amusinghoS.App.Controllers
             var files = Request.Form.Files;
             string filename = files[0].FileName;
             string fileExtention = System.IO.Path.GetExtension(files[0].FileName);
-            string path = Guid.NewGuid().ToString() + fileExtention; string basepath = en.WebRootPath;
-            string path_server = basepath + "\\upfile\\" + path;
-            using (FileStream fstream = new FileStream(path_server, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+            string path = Guid.NewGuid().ToString() + fileExtention;
+            string basepath = en.WebRootPath;
+            string path_server = "\\upfile\\" + path;
+            using (FileStream fstream = new FileStream(basepath+path_server, FileMode.OpenOrCreate, FileAccess.ReadWrite))
             //  using (FileStream fstream = System.IO.File.Create(newFile)) //两种都可以使用
             {
                 await files[0].CopyToAsync(fstream);
             }
-            return Ok(new { code = 200, msg = "上传成功！" });
+            return Ok(new { code = 200, msg = "上传成功！" ,filepath = path_server});
         }
     }
 }

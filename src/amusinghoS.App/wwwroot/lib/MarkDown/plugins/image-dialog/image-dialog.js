@@ -55,7 +55,7 @@
                                         //"<label>" + imageLang.link + "</label>" +
                                         //"<input type=\"text\" value=\"http://\" data-link />" +
                                         //"<br/>" +
-                    "<input type ='file' id='file' name='file' multiple/><input type='button' class='btn btn-success' style='cursor: pointer; ' value='上传'  onclick='upload()'/>"+
+                    "<input type ='file' id='file' name='file' multiple/><input type='button' style='cursor: pointer; ' value='上传'  onclick='upload()'/>"+
                                     ( (settings.imageUpload) ? "</form>" : "</div>");
 
                 //var imageFooterHTML = "<button class=\"" + classPrefix + "btn " + classPrefix + "image-manager-btn\" style=\"float:left;\">" + imageLang.managerButton + "</button>";
@@ -79,6 +79,13 @@
                             var alt  = this.find("[data-alt]").val();
                             var link = this.find("[data-url]").val();
                             //var link = this.find("[data-link]").val();
+                            console.log($("#file"));
+                            if ($("#file").length > 0) {
+                                alert('牛逼了');
+                            } else {
+                                alert('呵呵了');
+                                return;
+                            }
 
                             if (url === "")
                             {
@@ -189,9 +196,7 @@
 			this.dialogShowMask(dialog);
 			this.dialogLockScreen();
 			dialog.show();
-
 		};
-
 	};
 
 	// CommonJS/Node.js
@@ -237,7 +242,7 @@ var upload = function () {
         processData: false,//不要去处理发送的数据
         data: data,
         success: function (data) {
-            alert(data.message);
+            $("input[data-url]").val(data.filepath);
         },
         error: function () {
             alert("上传文件出现错误！");

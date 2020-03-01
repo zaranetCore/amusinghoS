@@ -7,28 +7,53 @@
 <link href="~/Lib/MarkDown/css/editormd.css" rel="stylesheet" />
 <link href="~/Lib/MarkDown/css/editormd.preview.css" rel="stylesheet" />
 <script src="~/Lib/MarkDown/js/editormd.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css"  rel="stylesheet"  />
 
-<div id="test-editormd">
-    <textarea id="articleContent" style="display: none;"></textarea>
+<div class="container">
+    <div id="test-editormd">
+        <textarea id="articleContent" style="display: none;"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="title">文章标题:</label>
+        <input type="text" class="form-control" id="title">
+    </div>
+    <div class="form-group">
+        <label for="details">内容简介:</label>
+        <input type="text" class="form-control" id="details">
+    </div>
+    <div class="form-group">
+        <input type="button" class="btn btn-info" value="提交按钮" id="btn_submit">
+    </div>
 </div>
+    <script>
+        $(function () {
+            testEditor = editormd("test-editormd", {
+                width: "99%",
+                height: 640,
+                syncScrolling: "single",
+                path: "/Lib/MarkDown/lib/",
+                saveHTMLToTextarea: true,
+                emoji: true
+            });
 
-<script>
-    $(function () {
-        testEditor = editormd("test-editormd", {
-            width: "99%",
-            height: 640,
-            syncScrolling: "single",
-            path: "/Lib/MarkDown/lib/",
-            saveHTMLToTextarea: true,
-            emoji: true
+            $("#btn_submit").click(function () {
+                var data = {
+                    htmlContent : testEditor.getHTML(),
+                    title : $("#title").val(),
+                    details: $("#details").val()
+                }
+                console.log(data);
+                $.ajax({
+                    url: '/markdown/updateorcreate',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    success: function (data) {
+
+                    }
+                });
+            });
         });
-        
-      
-    });
-
-    function btnSave() {
-        alert("html数据：" + testEditor.getHTML());
-        alert("markdown数据：" + testEditor.getMarkdown());
-    }
-</script>
+    </script>
 
