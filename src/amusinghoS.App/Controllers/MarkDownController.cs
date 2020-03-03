@@ -16,8 +16,26 @@ namespace amusinghoS.App.Controllers
         {
             _unitWork = unitOfWork;
         }
-        public IActionResult Index()
+        [Route("/markdown")]
+        [Route("/markdown/{isUpdate}")]
+        public IActionResult Index(string isUpdate)
         {
+            if (string.IsNullOrWhiteSpace(isUpdate))
+            {
+                ViewData["uid"] = Guid.NewGuid().ToString();
+            }
+            else
+            {
+                if (_unitWork.amusingArticleRepository.Any(u => u.articleId == isUpdate))//修改
+                {
+                    ViewData["uid"] = isUpdate;
+                }
+                else
+                {
+                    //如果没有 则url是瞎x乱写的 那这里就直接让他Create
+                    return RedirectToAction("Index", "/markdown");
+                }
+            }
             return View();
         }
         [HttpPost]
@@ -29,12 +47,11 @@ namespace amusinghoS.App.Controllers
                 Title = md_Create.title,
                 Image = null,
                 Description = md_Create.details,
-                articleId = new Guid().ToString()
-
+                articleId = md_Create.aticleId
             };
-            if (_unitWork.amusingArticleRepository.Any(u=>u.articleId == md_Create.aticleId))//修改
+            if (_unitWork.amusingArticleRepository.Any(u => u.articleId == md_Create.aticleId))//修改
             {
-                await _unitWork.amusingArticleRepository.UpdateAsync(model,false); //修改文章表
+                await _unitWork.amusingArticleRepository.UpdateAsync(model, false); //修改文章表
                 //修改文章明细表
                 await _unitWork.amusingArticleDeatilsRepository.UpdateAsync(new amusingArticleDetails()
                 {
@@ -45,12 +62,13 @@ namespace amusinghoS.App.Controllers
             }
             else//添加
             {
-                await _unitWork.amusingArticleRepository.InsertAsync(model,false);//添加文章表
+                await _unitWork.amusingArticleRepository.InsertAsync(model, false);//添加文章表
                 //添加文章明细表
-                await _unitWork.amusingArticleDeatilsRepository.InsertAsync(new amusingArticleDetails() {
-                      Html = md_Create.htmlContent,
-                       LastUpdate = DateTime.Now,
-                       articleDetailsId = model.articleId
+                bool isok = _unitWork.amusingArticleDeatilsRepository.Insert(new amusingArticleDetails()
+                {
+                    Html = md_Create.htmlContent,
+                    LastUpdate = DateTime.Now,
+                    articleDetailsId = Guid.NewGuid().ToString()
                 }, true);
             }
             return View();

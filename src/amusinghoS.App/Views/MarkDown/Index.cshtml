@@ -14,6 +14,10 @@
         <textarea id="articleContent" style="display: none;"></textarea>
     </div>
     <div class="form-group">
+        <label for="articleId">唯一Id:</label>
+        <input type="text" class="form-control" id="articleId" value="@ViewData["uid"]" readonly>
+    </div>
+    <div class="form-group">
         <label for="title">文章标题:</label>
         <input type="text" class="form-control" id="title">
     </div>
@@ -40,7 +44,8 @@
                 var data = {
                     htmlContent : testEditor.getHTML(),
                     title : $("#title").val(),
-                    details: $("#details").val()
+                    details: $("#details").val(),
+                    aticleId: $("#articleId").val()
                 }
                 console.log(data);
                 $.ajax({
