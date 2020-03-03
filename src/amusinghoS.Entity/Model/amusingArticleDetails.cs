@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace amusinghoS.EntityData.Model
 {
-    public class amusingArticleDetails
+    public class amusingArticleDetails : amusingBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -22,10 +22,12 @@ namespace amusinghoS.Services
 
         #region 字段
         private amusingArticleRepository _SysUserRepository = null;
+        private amusingArticleDetailsRepository _amusingArticleDetailsRepository = null;
         #endregion
 
         #region 操作类属性
         public amusingArticleRepository amusingArticleRepository => _SysUserRepository ?? (_SysUserRepository = new amusingArticleRepository(DbContext));
+        public amusingArticleDetailsRepository amusingArticleDeatilsRepository => _amusingArticleDetailsRepository ?? (_amusingArticleDetailsRepository = new amusingArticleDetailsRepository(DbContext));
         #endregion
 
         #region 仓储操作（提交事务保存SaveChanges(),回滚RollBackChanges(),释放资源Dispose()）

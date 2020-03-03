@@ -28,15 +28,30 @@ namespace amusinghoS.App.Controllers
             {
                 Title = md_Create.title,
                 Image = null,
-                Description = md_Create.details
+                Description = md_Create.details,
+                articleId = new Guid().ToString()
+
             };
             if (_unitWork.amusingArticleRepository.Any(u=>u.articleId == md_Create.aticleId))//修改
             {
-                await _unitWork.amusingArticleRepository.UpdateAsync(model,true);
+                await _unitWork.amusingArticleRepository.UpdateAsync(model,false); //修改文章表
+                //修改文章明细表
+                await _unitWork.amusingArticleDeatilsRepository.UpdateAsync(new amusingArticleDetails()
+                {
+                    Html = md_Create.htmlContent,
+                    LastUpdate = DateTime.Now,
+                    articleDetailsId = model.articleId
+                }, true);
             }
             else//添加
             {
-                await _unitWork.amusingArticleRepository.InsertAsync(model,true);
+                await _unitWork.amusingArticleRepository.InsertAsync(model,false);//添加文章表
+                //添加文章明细表
+                await _unitWork.amusingArticleDeatilsRepository.InsertAsync(new amusingArticleDetails() {
+                      Html = md_Create.htmlContent,
+                       LastUpdate = DateTime.Now,
+                       articleDetailsId = model.articleId
+                }, true);
             }
             return View();
         }
