@@ -55,7 +55,10 @@
                     data: JSON.stringify(data),
                     dataType: "json",
                     success: function (data) {
-
+                        if (data.code == 200) {
+                            alert('操作成功！');
+                            window.location.href = "/";
+                        }
                     }
                 });
             });

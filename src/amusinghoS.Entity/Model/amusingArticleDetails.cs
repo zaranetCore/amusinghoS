@@ -13,6 +13,8 @@ namespace amusinghoS.EntityData.Model
         [Column(TypeName = "varchar(48)")]
         public string Html { get; set; }
         public DateTime LastUpdate { get; set; }
-        public virtual amusingArticle AmusingArticle { get; set; }
+
+        public string amusingArticleId { get; set; }
+        public amusingArticle amusingArticle { get; set; }
     }
 }

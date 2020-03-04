@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace amusinghoS.EntityData.Model
 {
-   public  class amusingArticle : amusingBase
+    public class amusingArticle : amusingBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -17,5 +17,7 @@ namespace amusinghoS.EntityData.Model
         public string Image { get; set; }
         [Column(TypeName = "varchar(200)")]
         public string Description { get; set; }
+
+        public amusingArticleDetails amusingArticleDetails { get; set; }
     }
 }

@@ -51,27 +51,32 @@ namespace amusinghoS.App.Controllers
             };
             if (_unitWork.amusingArticleRepository.Any(u => u.articleId == md_Create.aticleId))//修改
             {
-                await _unitWork.amusingArticleRepository.UpdateAsync(model, false); //修改文章表
+                //查询amusingArticleDetails 索引Keys
+                var amusingArticleDetails_Key = _unitWork.amusingArticleDeatilsRepository
+                                                                            .Get(u => u.amusingArticleId == model.articleId)
+                                                                                .articleDetailsId;
+                _unitWork.amusingArticleRepository.Update(model); //修改文章表
+
                 //修改文章明细表
-                await _unitWork.amusingArticleDeatilsRepository.UpdateAsync(new amusingArticleDetails()
+                _unitWork.amusingArticleDeatilsRepository.Update(new amusingArticleDetails()
                 {
                     Html = md_Create.htmlContent,
-                    LastUpdate = DateTime.Now,
-                    articleDetailsId = model.articleId
-                }, true);
+                    articleDetailsId = amusingArticleDetails_Key
+                });
             }
             else//添加
             {
                 await _unitWork.amusingArticleRepository.InsertAsync(model, false);//添加文章表
-                //添加文章明细表
+                                                                                   //添加文章明细表
                 bool isok = _unitWork.amusingArticleDeatilsRepository.Insert(new amusingArticleDetails()
                 {
                     Html = md_Create.htmlContent,
                     LastUpdate = DateTime.Now,
-                    articleDetailsId = Guid.NewGuid().ToString()
+                    articleDetailsId = Guid.NewGuid().ToString(),
+                    amusingArticleId = model.articleId
                 }, true);
             }
-            return View();
+            return Ok(new { code = 200, msg = "保存成功！"});
         }
     }
 }
