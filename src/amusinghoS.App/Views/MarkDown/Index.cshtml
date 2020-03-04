@@ -2,66 +2,73 @@
 @{
     Layout = null;
 }
+@using amusinghoS.EntityData.Model;
+
+
+@{
+    var obj = ViewData["page_Obj"] as amusingArticle;
+    var html = @ViewData["page_Html"];
+}
 
 <script src="~/js/jquery-1.10.2.min.js"></script>
 <link href="~/Lib/MarkDown/css/editormd.css" rel="stylesheet" />
 <link href="~/Lib/MarkDown/css/editormd.preview.css" rel="stylesheet" />
 <script src="~/Lib/MarkDown/js/editormd.js"></script>
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css"  rel="stylesheet"  />
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 <div class="container">
     <div id="test-editormd">
-        <textarea id="articleContent" style="display: none;"></textarea>
+        <textarea id="articleContent" style="display: none;">@Html.Raw(html)</textarea>
     </div>
     <div class="form-group">
         <label for="articleId">唯一Id:</label>
-        <input type="text" class="form-control" id="articleId" value="@ViewData["uid"]" readonly>
+        <input type="text" class="form-control" id="articleId" value="@obj.articleId" readonly>
     </div>
     <div class="form-group">
         <label for="title">文章标题:</label>
-        <input type="text" class="form-control" id="title">
+        <input type="text" class="form-control" id="title" value="@obj.Title">
     </div>
     <div class="form-group">
         <label for="details">内容简介:</label>
-        <input type="text" class="form-control" id="details">
+        <input type="text" class="form-control" id="details" value="@obj.Description">
     </div>
     <div class="form-group">
         <input type="button" class="btn btn-info" value="提交按钮" id="btn_submit">
     </div>
 </div>
-    <script>
-        $(function () {
-            testEditor = editormd("test-editormd", {
-                width: "99%",
-                height: 640,
-                syncScrolling: "single",
-                path: "/Lib/MarkDown/lib/",
-                saveHTMLToTextarea: true,
-                emoji: true
-            });
+<script>
+    $(function () {
+        testEditor = editormd("test-editormd", {
+            width: "99%",
+            height: 640,
+            syncScrolling: "single",
+            path: "/Lib/MarkDown/lib/",
+            saveHTMLToTextarea: true,
+            emoji: true
+        });
 
-            $("#btn_submit").click(function () {
-                var data = {
-                    htmlContent : testEditor.getHTML(),
-                    title : $("#title").val(),
-                    details: $("#details").val(),
-                    aticleId: $("#articleId").val()
-                }
-                console.log(data);
-                $.ajax({
-                    url: '/markdown/updateorcreate',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(data),
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.code == 200) {
-                            alert('操作成功！');
-                            window.location.href = "/";
-                        }
+        $("#btn_submit").click(function () {
+            var data = {
+                htmlContent: testEditor.getMarkdown(),
+                title: $("#title").val(),
+                details: $("#details").val(),
+                aticleId: $("#articleId").val()
+            }
+            console.log(data);
+            $.ajax({
+                url: '/markdown/updateorcreate',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                dataType: "json",
+                success: function (data) {
+                    if (data.code == 200) {
+                        alert('操作成功！');
+                        window.location.href = "/";
                     }
-                });
+                }
             });
         });
-    </script>
+    });
+</script>
 

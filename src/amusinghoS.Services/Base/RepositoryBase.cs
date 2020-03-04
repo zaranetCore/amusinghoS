@@ -244,6 +244,10 @@ namespace amusinghoS.Services.Base
         public T Get(Expression<Func<T, bool>> predicate = null, bool isNoTracking = true)
         {
             var data = isNoTracking ? _dbSet.Where(predicate).AsNoTracking() : _dbSet.Where(predicate);
+            if (data.ToList().Count == 0)
+            {
+                return null;
+            }
             return data.FirstOrDefault();
         }
         public async Task<T> GetAsync(object id)

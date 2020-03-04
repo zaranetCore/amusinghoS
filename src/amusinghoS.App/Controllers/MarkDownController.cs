@@ -22,13 +22,21 @@ namespace amusinghoS.App.Controllers
         {
             if (string.IsNullOrWhiteSpace(isUpdate))
             {
-                ViewData["uid"] = Guid.NewGuid().ToString();
+                ViewData["page_Obj"] = new amusingArticle() {  articleId = Guid.NewGuid().ToString()};
+                ViewData["page_Html"] = "";
             }
             else
             {
-                if (_unitWork.amusingArticleRepository.Any(u => u.articleId == isUpdate))//修改
+                var obj = _unitWork.amusingArticleRepository.Get(u => u.articleId == isUpdate);
+                string html = "";
+                if (obj != null)
                 {
-                    ViewData["uid"] = isUpdate;
+                    html = _unitWork.amusingArticleDeatilsRepository.Get(u => u.amusingArticleId == obj.articleId).Html;
+                }
+                if (obj != null)//修改
+                {
+                    ViewData["page_Obj"] = obj;
+                    ViewData["page_Html"] = html;
                 }
                 else
                 {
