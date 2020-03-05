@@ -12,9 +12,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{84582A1D-C0BA-4EFC-929C-83767E72E6EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "githubResources", "githubResources", "{DE42FABF-8224-440E-A3EC-EE5B295320F7}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\haozi zhang\AppData\Roaming\Tencent\QQ\Temp\amusighoS_V01.png = C:\Users\haozi zhang\AppData\Roaming\Tencent\QQ\Temp\amusighoS_V01.png
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusinghoS.Shared", "amusinghoS.Shared\amusinghoS.Shared.csproj", "{1DA5291F-DD28-4B21-9B76-AB74B2161AA2}"
 EndProject
@@ -22,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusinghos.xUnit", "amusing
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusinghoS.Services", "amusinghoS.Services\amusinghoS.Services.csproj", "{7A57F743-B60B-428B-A1E4-A2F0506A5846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "amusinghoS.Redis", "amusinghoS.Redis\amusinghoS.Redis.csproj", "{415C867D-F51F-45E2-8464-56DEA35B134B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusinghoS.Redis", "amusinghoS.Redis\amusinghoS.Redis.csproj", "{415C867D-F51F-45E2-8464-56DEA35B134B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
