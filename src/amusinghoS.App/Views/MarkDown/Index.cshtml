@@ -52,7 +52,8 @@
                 htmlContent: testEditor.getMarkdown(),
                 title: $("#title").val(),
                 details: $("#details").val(),
-                aticleId: $("#articleId").val()
+                aticleId: $("#articleId").val(),
+                markdown_unicode : testEditor.getHTML(),
             }
             console.log(data);
             $.ajax({

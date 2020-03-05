@@ -11,5 +11,6 @@ namespace amusinghoS.App.Models
         public string htmlContent { get; set; }
         public string title { get; set; }
         public string details { get; set; }
+        public string markdown_unicode { get; set; }
     }
 }

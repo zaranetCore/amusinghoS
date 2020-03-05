@@ -6,6 +6,7 @@ using amusinghoS.Services;
 using Microsoft.AspNetCore.Mvc;
 using amusinghoS.EntityData.Model;
 using amusinghoS.App.Models;
+using amusinghoS.Shared;
 
 namespace amusinghoS.App.Controllers
 {
@@ -50,10 +51,11 @@ namespace amusinghoS.App.Controllers
         [Route("/markdown/updateorcreate")]
         public async Task<IActionResult> UpdateOrCreate([FromBody]md_CreateUpdate md_Create)
         {
+            var strarray = HtmlHelper.GetHtmlImageUrlList(md_Create.markdown_unicode);
             var model = new amusingArticle()
             {
                 Title = md_Create.title,
-                Image = null,
+                Image = strarray.Length == 0 ? null : strarray[0],
                 Description = md_Create.details,
                 articleId = md_Create.aticleId
             };
@@ -84,7 +86,7 @@ namespace amusinghoS.App.Controllers
                     amusingArticleId = model.articleId
                 }, true);
             }
-            return Ok(new { code = 200, msg = "保存成功！"});
+            return Ok(new { code = 200, msg = "保存成功！" });
         }
     }
 }

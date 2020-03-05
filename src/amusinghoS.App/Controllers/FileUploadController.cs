@@ -21,7 +21,7 @@ namespace amusinghoS.App.Controllers
             string fileExtention = System.IO.Path.GetExtension(files[0].FileName);
             string path = Guid.NewGuid().ToString() + fileExtention;
             string basepath = en.WebRootPath;
-            string path_server = "\\upfile\\" + path;
+            string path_server = "/upfile/" + path;
             using (FileStream fstream = new FileStream(basepath+path_server, FileMode.OpenOrCreate, FileAccess.ReadWrite))
             //  using (FileStream fstream = System.IO.File.Create(newFile)) //两种都可以使用
             {

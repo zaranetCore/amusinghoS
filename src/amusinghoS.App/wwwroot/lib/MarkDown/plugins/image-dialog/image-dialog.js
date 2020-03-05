@@ -55,7 +55,7 @@
                                         //"<label>" + imageLang.link + "</label>" +
                                         //"<input type=\"text\" value=\"http://\" data-link />" +
                                         //"<br/>" +
-                    "<input type ='file' id='file' name='file' multiple/><input type='button' style='cursor: pointer; ' value='上传'  onclick='upload()'/>"+
+                    "<input type ='file' id='file' name='file' multiple/><input type='button' style='cursor: pointer; ' value='上传'  onclick='upload()' class='btn btn-primary'/>"+
                                     ( (settings.imageUpload) ? "</form>" : "</div>");
 
                 //var imageFooterHTML = "<button class=\"" + classPrefix + "btn " + classPrefix + "image-manager-btn\" style=\"float:left;\">" + imageLang.managerButton + "</button>";

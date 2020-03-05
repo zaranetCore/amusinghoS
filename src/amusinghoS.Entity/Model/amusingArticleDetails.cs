@@ -10,7 +10,7 @@ namespace amusinghoS.EntityData.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string articleDetailsId { get; set; }
-        [Column(TypeName = "varchar(48)")]
+        [Column(TypeName = "LongText")]
         public string Html { get; set; }
         public DateTime LastUpdate { get; set; }
 
