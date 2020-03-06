@@ -13,5 +13,8 @@ namespace amusinghoS.EntityData.Model
         public string commentatorName { get; set; }
         [Column(TypeName = "LongText")]
         public string content { get; set; }
+
+        public string amusingArticleId { get; set; }
+        public amusingArticle amusingArticle { get; set; }
     }
 }

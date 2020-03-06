@@ -1,4 +1,5 @@
 ﻿using amusinghoS.EntityData.Base;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,5 +20,7 @@ namespace amusinghoS.EntityData.Model
         public string Description { get; set; }
 
         public amusingArticleDetails amusingArticleDetails { get; set; }
+
+        public List<amusingArticleComment> amusingArticleComments { get; set; }
     }
 }

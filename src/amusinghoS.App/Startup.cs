@@ -19,6 +19,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using AutoMapper;
+using amusinghoS.App.Models.Dto;
+
 namespace amusinghoS
 {
     public class Startup
@@ -54,6 +57,7 @@ namespace amusinghoS
             services.AddTransient(typeof(UnitOfWork));
             services.AddScoped<IRedisClient, CustomerRedis>();
             //var csredis = new CSRedis.CSRedisClient("127.0.0.1:6379");
+            services.AddAutoMapper(typeof(AutoMapperConfig));
             services.AddControllersWithViews();
         }
 
