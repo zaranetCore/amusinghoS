@@ -52,6 +52,14 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.7.9, )"
+            },
+            "Hangfire.MySql.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.1, )"

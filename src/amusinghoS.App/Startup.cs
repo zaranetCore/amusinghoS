@@ -17,6 +17,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using AutoMapper;
 using System;
+using Hangfire;
+using Hangfire.MySql.Core;
 
 namespace amusinghoS
 {
@@ -45,6 +47,10 @@ namespace amusinghoS
                         opts.RequestCultureProviders = new List<IRequestCultureProvider>{
                            new X_DOVERequestCultureProvider()
                         };
+                }); 
+            services.AddHangfire(config =>
+                {
+                    config.UseStorage(new MySqlStorage("Server=39.104.53.29; uid = zaranet; pwd = 123456; database = amusinghoS;AllowUserVariables=True;    "));
                 });
             //注入工作单元
             services.AddDbContext<amusinghoSDbContext>(options => options.UseMySql(DESEncryptHelper.Decrypt(
@@ -62,8 +68,8 @@ namespace amusinghoS
         {
             if (env.IsDevelopment())
             {
-                app.UseCustomErrorPages();
-                // app.UseDeveloperExceptionPage();
+                //app.UseCustomErrorPages();
+                 app.UseDeveloperExceptionPage();
             }
             else
             {
@@ -72,6 +78,10 @@ namespace amusinghoS
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseHangfireServer();
+            app.UseHangfireDashboard();
+            RecurringJob.AddOrUpdate(() => DataSynchronize.SynchronizeAsync(), Cron.Minutely());
 
             app.UseAuthorization();
             app.UseRequestLocalization(
