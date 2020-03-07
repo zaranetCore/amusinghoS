@@ -170,3 +170,5 @@ E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\Err
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\MarkDown\Index.cshtml.g.cs
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\Article\Index.cshtml.g.cs
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\AutoMapper.dll
+E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.MvcApplicationPartsAssemblyInfo.cache

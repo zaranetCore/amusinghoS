@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using amusinghoS.App.Dto;
 using amusinghoS.Services;
 using Microsoft.AspNetCore.Mvc;
+using amusinghoS.Shared;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -30,12 +32,20 @@ namespace amusinghoS.App.Controllers
                                   comment.content,
                                   comment.commentatorName
                               };
+
             var model = (from details in _unitWork.amusingArticleDeatilsRepository.GetAll()
                          join article in _unitWork.amusingArticleRepository.GetAll()
                          on details.amusingArticleId equals article.articleId
                          where articleid == details.amusingArticleId
-                         select new { details.Html, article.Title, article.CreateTime }).FirstOrDefault();
-            //ViewData["model"] = 
+                         select new ArticleViewModel()
+                         {
+                             html = details.Html,
+                             formatdetatime = article.CreateTime.ToString() +
+                             DatetimeHelper.GetPeriod(article.CreateTime),
+                             title = article.Title
+                         }).FirstOrDefault();
+
+            ViewData["ViewBinding"] = model;
             return View();
         }
     }

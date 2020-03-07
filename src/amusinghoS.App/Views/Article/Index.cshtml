@@ -1,4 +1,7 @@
-﻿@model String
+﻿@using amusinghoS.App.Dto;
+@{ 
+    var bind = ViewData["ViewBinding"] as ArticleViewModel;
+}
 
 <main class="thea-post" role="main">
     <div class="container">
@@ -7,25 +10,24 @@
                 <div class="post-meta-tags">
                     <!--<a href="https://alexinea.com/category/view/" class="label tag">观点</a>-->
                 </div>
-                <h1 class="post-title">战疫（五）：吹哨人李文亮，不朽！</h1>
+                <h1 class="post-title">@Html.DisplayName(bind == null ? "" : bind.title)</h1>
                 <div class="post-meta">
-                    <time class="post-meta-date">2020 年 2 月 7 日,  5:00 下午</time>
+                    <time class="post-meta-date">@Html.DisplayName(bind == null ? "" : bind.formatdetatime)</time>
                     <span class="divider-dot">·</span>
                     <span class="post-meta-author">ZaraNet</span>
                 </div>
             </header>
 
             <div class="post-image">
-                <img width="999" height="562" src="static/picture/20200207.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" />
+                
             </div>
 
             <div class="post-content">
-                <p>2020 年 2 月 7 日，星陨。</p>
-                <figure class="wp-block-image"><img src="static/picture/640.png" alt="" class="wp-image-675" /><figcaption>李文亮（1986-2020）</figcaption></figure>
+                @Html.Raw(bind == null ? "" : bind.html)
             </div>
 
             <div class="post-meta-tags">
-                <a href="https://alexinea.com/tag/2019-ncov/" class="label tag">2019-nCoV</a><a href="https://alexinea.com/tag/epidemic/" class="label tag">疫情</a>
+                <!-- <a href="https://alexinea.com/tag/2019-ncov/" class="label tag">2019-nCoV</a><a href="https://alexinea.com/tag/epidemic/" class="label tag">疫情</a>-->
             </div>
 
             <div class="post-like">
@@ -40,10 +42,10 @@
                         <div class="modal-body">
                             <div class="columns">
                                 <div class="column col-6">
-                                    <img class="img-responsive" src="static/picture/like-wechat2.png">
+                                    <img class="img-responsive" src="/static/wechat.jpg">
                                 </div>
                                 <div class="column col-6">
-                                    <img class="img-responsive" src="static/picture/like-alipay2.png">
+                                    <img class="img-responsive" src="/static/alipay2.jpg">
                                 </div>
                             </div>
                         </div>
@@ -52,7 +54,7 @@
             </div>
 
             <div class="post-wechat-mp">
-                <img class="img-responsive img-wechat-mp" src="static/picture/wechat-mp.png">
+                <img class="img-responsive img-wechat-mp" src="/static/wechat.jpg" style="width:333px;height:450px;">
             </div>
 
             <div class="post-related">

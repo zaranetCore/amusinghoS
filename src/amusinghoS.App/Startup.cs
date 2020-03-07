@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using amusinghoS.App.Extensions;
 using amusinghoS.App.Models.amusingConfigModel;
 using amusinghoS.EntityData;
@@ -17,10 +14,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using AutoMapper;
-using amusinghoS.App.Models.Dto;
+using System;
 
 namespace amusinghoS
 {
@@ -57,7 +53,7 @@ namespace amusinghoS
             services.AddTransient(typeof(UnitOfWork));
             services.AddScoped<IRedisClient, CustomerRedis>();
             //var csredis = new CSRedis.CSRedisClient("127.0.0.1:6379");
-            services.AddAutoMapper(typeof(AutoMapperConfig));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews();
         }
 

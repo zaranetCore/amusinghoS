@@ -70,7 +70,7 @@ namespace amusinghoS.App.Controllers
                 //修改文章明细表
                 _unitWork.amusingArticleDeatilsRepository.Update(new amusingArticleDetails()
                 {
-                    Html = md_Create.htmlContent,
+                    Html = md_Create.markdown_unicode,
                     articleDetailsId = amusingArticleDetails_Key
                 });
             }
@@ -80,7 +80,7 @@ namespace amusinghoS.App.Controllers
                                                                                    //添加文章明细表
                 bool isok = _unitWork.amusingArticleDeatilsRepository.Insert(new amusingArticleDetails()
                 {
-                    Html = md_Create.htmlContent,
+                    Html = md_Create.markdown_unicode,
                     LastUpdate = DateTime.Now,
                     articleDetailsId = Guid.NewGuid().ToString(),
                     amusingArticleId = model.articleId
