@@ -9,6 +9,7 @@ namespace amusinghoS.App.Dto
     {
         public string email { get; set; }
         public string name { get; set; }
+        public string httpurl { get; set; }
         public string content { get; set; }
     }
 }

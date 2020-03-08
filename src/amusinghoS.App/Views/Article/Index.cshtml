@@ -52,31 +52,48 @@
                     </div>
                 </div>
             </div>
-
             <div class="post-wechat-mp">
                 <img class="img-responsive img-wechat-mp" src="/static/wechat.jpg" style="width:333px;height:450px;">
             </div>
-
             <div class="post-related">
             </div>
-
             <div id="comments" class="post-comments">
+                <h5 class="comments-title">2 条评论</h5>
+                <ul id="commentlist" class="comments-list">
 
-
+                    <li id="comment-244" class="tile tile-comment">
+                        <div class="tile-icon vcard">
+                            <div class="visitor gravatar">
+                                <img alt="" class="avatar avatar-36 photo" height="36" width="36">
+                            </div>
+                        </div>
+                        <div class="tile-content">
+                            <p class="tile-title text-bold">
+                                <a class="url">奶爸建网站笔记</a>
+                            </p>
+                            <p class="tile-title">
+                                来了就留言，能骗一个IP是一个IP。
+                            </p>
+                            <p class="tile-subtitle text-gray">
+                                2019 年 10 月 15 日 13:40       
+                            </p>
+                        </div>
+                    </li>
+                </ul>
 
                 <h5 id="respond" class="comments-title">发表评论</h5>
-                <form action="https://alexinea.com/wp-comments-post.php" method="post" id="commentform" class="comment-form form">
+                <form action="/article/add" method="post" id="commentform" class="comment-form form">
                     <div class="form-group">
-                        <input type="text" name="author" id="author" class="form-input" placeholder="昵称 (必填)" value="" tabindex="1" aria-required='true'>
+                        <input type="text" name="name" id="name" class="form-input" placeholder="昵称 (必填)" value="" tabindex="1" aria-required='true'>
                     </div>
                     <div class="form-group">
                         <input type="text" name="email" id="email" class="form-input" placeholder="邮件 (不会被公布)" value="" tabindex="2" aria-required='true'>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="url" id="url" class="form-input" placeholder="网址 (选填)" value="" tabindex="3">
+                        <input type="text" name="httpurl" id="httpurl" class="form-input" placeholder="网址 (选填)" value="" tabindex="3">
                     </div>
                     <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1794533042" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="188" /></p>      <div class="form-group">
-                        <textarea name="comment" id="comment" class="form-input" rows="5" tabindex="4"></textarea>
+                        <textarea name="content" id="content" class="form-input" rows="5" tabindex="4"></textarea>
                     </div>
                     <div class="form-group">
                         <input name="submit" type="submit" id="submit" class="btn btn-primary" tabindex="5" value="发表评论" />
@@ -86,11 +103,8 @@
                     <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
                 </form>
             </div>
-
             <div class="container">
             </div>
-
         </article>
-
     </div>
 </main>

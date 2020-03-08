@@ -52,7 +52,7 @@ namespace amusinghoS.App.Controllers
 
         [HttpPost]
         [Route("/Article/Add")]
-        public async Task<IActionResult> AddComment([FromBody]CommentViewModel commentVm)
+        public async Task<IActionResult> AddComment([FromForm]CommentViewModel commentVm)
         {
             try
             {
