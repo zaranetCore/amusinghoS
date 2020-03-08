@@ -8,8 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using amusinghoS.Shared;
 using amusinghoS.Redis;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace amusinghoS.App.Controllers
 {
     public class ArticleController : Controller
@@ -24,7 +22,6 @@ namespace amusinghoS.App.Controllers
         [Route("/Article/{articleid}")]
         public IActionResult Index(string articleid)
         {
-            _redisclient.Set("demo","demostr",300);
             var amusingArticleList = _unitWork.amusingArticleRepository.GetAll();
             var commentList = from article in amusingArticleList
                               join comment in _unitWork.amusingArticleCommentRepository.GetAll()
@@ -51,6 +48,21 @@ namespace amusinghoS.App.Controllers
 
             ViewData["ViewBinding"] = model;
             return View();
+        }
+
+        [HttpPost]
+        [Route("/Article/Add")]
+        public async Task<IActionResult> AddComment([FromBody]CommentViewModel commentVm)
+        {
+            try
+            {
+                await _redisclient.SetAsync("newComment", commentVm, 300);
+                return Ok(new { code = 200, msg = "评论成功" });
+            }
+            catch
+            {
+                throw new ApplicationException("redis sever error..");
+            }
         }
     }
 }

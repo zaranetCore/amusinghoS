@@ -58,7 +58,7 @@ namespace amusinghoS
                 , "12345678")));
             services.AddTransient(typeof(UnitOfWork));
             services.AddScoped<IRedisClient, CustomerRedis>();
-            var csredis = new CSRedis.CSRedisClient("39.104.53.29:6379");
+            var csredis = new CSRedis.CSRedisClient("39.104.53.29:6379,password=zaranet");
             RedisHelper.Initialization(csredis);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
