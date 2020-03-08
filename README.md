@@ -13,3 +13,4 @@ This case tells about my life, including programming, cycling, music, books, etc
 | AutoMapper      |    no |
 | EF Core      |    yes |
 | UnitOfWork      |    yes |
+| HangFire      |    yes |
