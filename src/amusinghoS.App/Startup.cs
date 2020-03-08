@@ -58,7 +58,9 @@ namespace amusinghoS
                 , "12345678")));
             services.AddTransient(typeof(UnitOfWork));
             services.AddScoped<IRedisClient, CustomerRedis>();
-            //var csredis = new CSRedis.CSRedisClient("127.0.0.1:6379");
+            var csredis = new CSRedis.CSRedisClient("39.104.53.29:6379");
+            RedisHelper.Initialization(csredis);
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews();
         }
@@ -81,7 +83,7 @@ namespace amusinghoS
 
             app.UseHangfireServer();
             app.UseHangfireDashboard();
-            RecurringJob.AddOrUpdate(() => DataSynchronize.SynchronizeAsync(), Cron.Minutely());
+            RecurringJobExtensions.AddRecurringJobs();
 
             app.UseAuthorization();
             app.UseRequestLocalization(

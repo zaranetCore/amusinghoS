@@ -11,7 +11,6 @@ namespace amusinghoS.Redis
         {
             return RedisHelper.Get(key);
         }
-
         public T Get<T>(string key) where T : new()
         {
             return RedisHelper.Get<T>(key);
