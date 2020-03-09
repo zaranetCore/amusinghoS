@@ -6,3 +6,10 @@ E:\Project\amusinghoS\src\amusinghoS.Redis\obj\Debug\netcoreapp3.1\amusinghoS.Re
 E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.Redis.pdb
 E:\Project\amusinghoS\src\amusinghoS.Redis\obj\Debug\netcoreapp3.1\amusinghoS.Redis.dll
 E:\Project\amusinghoS\src\amusinghoS.Redis\obj\Debug\netcoreapp3.1\amusinghoS.Redis.pdb
+E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.EntityData.dll
+E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.Services.dll
+E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.Shared.dll
+E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.Services.pdb
+E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.EntityData.pdb
+E:\Project\amusinghoS\src\amusinghoS.Redis\bin\Debug\netcoreapp3.1\amusinghoS.Shared.pdb
+E:\Project\amusinghoS\src\amusinghoS.Redis\obj\Debug\netcoreapp3.1\amusinghoS.Redis.csproj.CopyComplete

@@ -47,16 +47,17 @@ namespace amusinghoS.App.Controllers
                          }).FirstOrDefault();
 
             ViewData["ViewBinding"] = model;
+            ViewData["articleid"] = articleid;
             return View();
         }
 
         [HttpPost]
         [Route("/Article/Add")]
-        public async Task<IActionResult> AddComment([FromForm]CommentViewModel commentVm)
+        public async Task<IActionResult> AddComment([FromForm]Comment commentVm)
         {
             try
             {
-                await _redisclient.SetAsync("newComment", commentVm, 300);
+                await _redisclient.RPushAsync("newcomment", commentVm, 3000);
                 return Ok(new { resultCode = 200, msg = "保存成功！" });
             }
             catch

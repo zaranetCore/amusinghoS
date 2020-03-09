@@ -8,4 +8,8 @@
     <PackageReference Include="CSRedisCore" Version="3.4.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\amusinghoS.Services\amusinghoS.Services.csproj" />
+  </ItemGroup>
+
 </Project>

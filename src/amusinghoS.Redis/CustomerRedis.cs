@@ -23,7 +23,6 @@ namespace amusinghoS.Redis
         {
             return await RedisHelper.GetAsync(key);
         }
-
         public async Task<T> GetAsync<T>(string key) where T : new()
         {
             return await RedisHelper.GetAsync<T>(key);
@@ -31,6 +30,10 @@ namespace amusinghoS.Redis
         public async Task SetAsync(string key, object t, int expiresSec = 0)
         {
             await RedisHelper.SetAsync(key, t, expiresSec);
+        }
+        public async Task RPushAsync(string key, object t, int expiresSec = 0)
+        {
+             await RedisHelper.RPushAsync(key, t);
         }
     }
 }

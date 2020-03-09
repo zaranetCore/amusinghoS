@@ -2319,7 +2319,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "CSRedisCore": "3.4.5"
+          "CSRedisCore": "3.4.5",
+          "amusinghoS.Services": "1.0.0"
         },
         "compile": {
           "bin/placeholder/amusinghoS.Redis.dll": {}

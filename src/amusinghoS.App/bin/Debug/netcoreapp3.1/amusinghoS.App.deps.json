@@ -1963,7 +1963,8 @@
       },
       "amusinghoS.Redis/1.0.0": {
         "dependencies": {
-          "CSRedisCore": "3.4.5"
+          "CSRedisCore": "3.4.5",
+          "amusinghoS.Services": "1.0.0"
         },
         "runtime": {
           "amusinghoS.Redis.dll": {}

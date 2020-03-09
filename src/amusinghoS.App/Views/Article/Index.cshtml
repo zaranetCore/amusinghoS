@@ -83,6 +83,11 @@
 
                 <h5 id="respond" class="comments-title">发表评论</h5>
                 <form action="/article/add" method="post" id="commentform" class="comment-form form">
+
+                    <div class="form-group" style="display:none;">
+                        <input type="text" name="articleId" id="articleId" class="form-input" placeholder="articleId" value="@ViewData["articleid"]" tabindex="1" aria-required='true'>
+                    </div>
+
                     <div class="form-group">
                         <input type="text" name="name" id="name" class="form-input" placeholder="昵称 (必填)" value="" tabindex="1" aria-required='true'>
                     </div>

@@ -183,7 +183,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\Project\\amusinghoS\\src\\amusinghoS.Services\\amusinghoS.Services.csproj": {
+                "projectPath": "E:\\Project\\amusinghoS\\src\\amusinghoS.Services\\amusinghoS.Services.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

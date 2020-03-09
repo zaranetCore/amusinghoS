@@ -13,5 +13,6 @@ namespace amusinghoS.Redis
         Task<string> GetAsync(string key);
         Task SetAsync(string key, object t, int expiresSec = 0);
         Task<T> GetAsync<T>(string key) where T : new();
+        Task RPushAsync(string key, object t, int expiresSec = 0);
     }
 }
