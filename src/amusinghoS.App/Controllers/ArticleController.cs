@@ -7,6 +7,8 @@ using amusinghoS.Services;
 using Microsoft.AspNetCore.Mvc;
 using amusinghoS.Shared;
 using amusinghoS.Redis;
+using AutoMapper;
+using amusinghoS.EntityData.Model;
 
 namespace amusinghoS.App.Controllers
 {
@@ -14,15 +16,22 @@ namespace amusinghoS.App.Controllers
     {
         UnitOfWork _unitWork;
         private readonly IRedisClient _redisclient;
-        public ArticleController(UnitOfWork unitOfWork,IRedisClient redisClient)
+        private readonly IMapper _mapper;
+        public ArticleController(UnitOfWork unitOfWork,IRedisClient redisClient,IMapper mapper)
         {
             _unitWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             _redisclient = redisClient ?? throw new ArgumentNullException(nameof(redisClient));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
         [Route("/Article/{articleid}")]
-        public IActionResult Index(string articleid)
+        public async Task<IActionResult> IndexAsync(string articleid)
         {
             var amusingArticleList = _unitWork.amusingArticleRepository.GetAll();
+
+
+            //comment from database or redis 
+            var redis_comment = await RedisHelper.LRangeAsync<Comment>("newcomment", 0, -1);
+
             var commentList = from article in amusingArticleList
                               join comment in _unitWork.amusingArticleCommentRepository.GetAll()
                               on article.articleId equals comment.amusingArticleId
@@ -31,8 +40,17 @@ namespace amusinghoS.App.Controllers
                               select new
                               {
                                   comment.content,
-                                  comment.commentatorName
+                                  comment.commentatorName,
+                                  comment.eamil,
+                                  comment.weburl
                               };
+            List<amusingArticleComment> list = new List<amusingArticleComment>();
+
+            foreach (var item in redis_comment)
+            {
+                var result = _mapper.Map<amusingArticleComment>(item);
+                list.Add(result);
+            }
 
             var model = (from details in _unitWork.amusingArticleDeatilsRepository.GetAll()
                          join article in _unitWork.amusingArticleRepository.GetAll()

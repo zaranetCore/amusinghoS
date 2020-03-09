@@ -18,7 +18,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Filter\" />
-    <Folder Include="Profiles\" />
     <Folder Include="wwwroot\upfile\" />
   </ItemGroup>
 </Project>
