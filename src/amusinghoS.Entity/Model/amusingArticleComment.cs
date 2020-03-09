@@ -1,4 +1,5 @@
 ﻿using amusinghoS.EntityData.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,7 +9,7 @@ namespace amusinghoS.EntityData.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string articleCommentId { get; set; }
+        public string articleCommentId { get; set; } = Guid.NewGuid().ToString();
         [Column(TypeName = "varchar(64)")]
         public string commentatorName { get; set; }
         [Column(TypeName = "LongText")]

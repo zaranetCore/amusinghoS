@@ -1,4 +1,5 @@
-﻿using amusinghoS.EntityData.Model;
+﻿using amusinghoS.EntityData;
+using amusinghoS.EntityData.Model;
 using amusinghoS.Services;
 using System;
 using System.Collections.Generic;
@@ -11,31 +12,32 @@ namespace amusinghoS.Redis
     {
 
         public static IRedisClient _redisclient;
-        public static UnitOfWork _unitOfWork;
-        public DataSynchronize(IRedisClient redisClient,UnitOfWork unitOfWork)
+        public DataSynchronize(IRedisClient redisClient)
         {
             _redisclient = redisClient ?? throw new ArgumentNullException(nameof(redisClient));
-
-            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
         public static async Task SynchronizeAsync()
         {
             try
             {
-                var list = await RedisHelper.LRangeAsync<Comment>("newcomment", 0, -1);
-                //入库操作
-                foreach (var item in list)
+                using (UnitOfWork unitOfWork = new UnitOfWork(new amusinghoSDbContext()))
                 {
-                    await _unitOfWork.amusingArticleCommentRepository.InsertAsync(new amusingArticleComment()
+                    var list = await RedisHelper.LRangeAsync<Comment>("newcomment", 0, -1);
+                    //入库操作
+                    foreach (var item in list)
                     {
-                        amusingArticleId = item.articleId,
-                        content = item.content,
-                        commentatorName = item.name,
-                        weburl = item.httpurl,
-                        eamil = item.email
-                    }, isSaveChange: true);
+                        var model = new amusingArticleComment()
+                        {
+                            amusingArticleId = item.articleId,
+                            content = item.content,
+                            commentatorName = item.name,
+                            weburl = item.httpurl,
+                            eamil = item.email
+                        };
+                        await unitOfWork.amusingArticleCommentRepository.InsertAsync(model, isSaveChange: true);
+                    }
+                    await RedisHelper.DelAsync("newcomment");
                 }
-                await RedisHelper.DelAsync("newcomment");
             }
             catch (Exception ex)
             {
