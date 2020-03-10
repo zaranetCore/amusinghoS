@@ -1,6 +1,9 @@
 ﻿@using amusinghoS.App.Dto;
-@{ 
+@using amusinghoS.Shared
+@using amusinghoS.EntityData.Model;
+@{
     var bind = ViewData["ViewBinding"] as ArticleViewModel;
+    var commentList = ViewData["comment"] as List<amusingArticleComment>;
 }
 
 <main class="thea-post" role="main">
@@ -19,7 +22,7 @@
             </header>
 
             <div class="post-image">
-                
+
             </div>
 
             <div class="post-content">
@@ -75,12 +78,36 @@
                                 来了就留言，能骗一个IP是一个IP。
                             </p>
                             <p class="tile-subtitle text-gray">
-                                2019 年 10 月 15 日 13:40       
+                                2019 年 10 月 15 日 13:40
                             </p>
                         </div>
                     </li>
-                </ul>
 
+
+                    @{
+                        foreach (var item in commentList)
+                        {
+                            <li id="comment-244" class="tile tile-comment">
+                                <div class="tile-icon vcard">
+                                    <div class="visitor gravatar">
+                                        <img alt="" class="avatar avatar-36 photo" height="36" width="36">
+                                    </div>
+                                </div>
+                                <div class="tile-content">
+                                    <p class="tile-title text-bold">
+                                        <a class="url">@item.weburl</a>
+                                    </p>
+                                    <p class="tile-title">
+                                        @item.content
+                                    </p>
+                                    <p class="tile-subtitle text-gray">
+                                        @item.CreateTime @Html.DisplayName(DatetimeHelper.GetPeriod(item.CreateTime))
+                                    </p>
+                                </div>
+                            </li>
+                        }
+                    }
+                </ul>
                 <h5 id="respond" class="comments-title">发表评论</h5>
                 <form action="/article/add" method="post" id="commentform" class="comment-form form">
 
@@ -118,10 +145,10 @@
     $(function () {
         $('#commentform').submit(function () {
             $.ajax({
-            //几个参数需要注意一下
+                //几个参数需要注意一下
                 type: "POST",//方法类型
                 dataType: "json",//预期服务器返回的数据类型
-                url: "/article/add" ,//url
+                url: "/article/add",//url
                 data: $('#commentform').serialize(),
                 success: function (result) {
                     console.log(result);//打印服务端返回的数据(调试用)
@@ -129,11 +156,11 @@
                         alert("SUCCESS");
                     };
                 },
-                error : function() {
+                error: function () {
                     alert("异常！");
                 }
             });
-          return false;
+            return false;
         });
     });
 </script>

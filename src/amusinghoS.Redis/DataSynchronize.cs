@@ -23,6 +23,7 @@ namespace amusinghoS.Redis
                 using (UnitOfWork unitOfWork = new UnitOfWork(new amusinghoSDbContext()))
                 {
                     var list = await RedisHelper.LRangeAsync<Comment>("newcomment", 0, -1);
+
                     //入库操作
                     foreach (var item in list)
                     {

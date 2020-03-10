@@ -28,29 +28,34 @@ namespace amusinghoS.App.Controllers
         {
             var amusingArticleList = _unitWork.amusingArticleRepository.GetAll();
 
-
             //comment from database or redis 
-            var redis_comment = await RedisHelper.LRangeAsync<Comment>("newcomment", 0, -1);
+            var redis_comment = (await RedisHelper.LRangeAsync<Comment>("newcomment", 0, -1)).ToList().Where(u=>u.articleId == articleid);
 
             var commentList = from article in amusingArticleList
                               join comment in _unitWork.amusingArticleCommentRepository.GetAll()
                               on article.articleId equals comment.amusingArticleId
                               where article.articleId == articleid
                               orderby comment.CreateTime
-                              select new
+                              select new amusingArticleComment
                               {
-                                  comment.content,
-                                  comment.commentatorName,
-                                  comment.eamil,
-                                  comment.weburl
+                                  content = comment.content,
+                                  commentatorName = comment.commentatorName,
+                                  eamil =   comment.eamil,
+                                  weburl= comment.weburl
                               };
             List<amusingArticleComment> list = new List<amusingArticleComment>();
 
             foreach (var item in redis_comment)
             {
-                var result = _mapper.Map<amusingArticleComment>(item);
-                list.Add(result);
+                if (item.articleId == articleid)
+                {
+                    var result = _mapper.Map<amusingArticleComment>(item);
+                    list.Add(result);
+                }
             }
+            commentList.ToList().ForEach(p =>{list.Add(p);});
+
+            ViewData["comment"] = list;
 
             var model = (from details in _unitWork.amusingArticleDeatilsRepository.GetAll()
                          join article in _unitWork.amusingArticleRepository.GetAll()
