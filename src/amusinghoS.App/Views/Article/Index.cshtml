@@ -61,28 +61,8 @@
             <div class="post-related">
             </div>
             <div id="comments" class="post-comments">
-                <h5 class="comments-title">2 条评论</h5>
+                <h5 class="comments-title"><a id="count">@commentList.Count</a>  条评论</h5>
                 <ul id="commentlist" class="comments-list">
-
-                    <li id="comment-244" class="tile tile-comment">
-                        <div class="tile-icon vcard">
-                            <div class="visitor gravatar">
-                                <img alt="" class="avatar avatar-36 photo" height="36" width="36">
-                            </div>
-                        </div>
-                        <div class="tile-content">
-                            <p class="tile-title text-bold">
-                                <a class="url">奶爸建网站笔记</a>
-                            </p>
-                            <p class="tile-title">
-                                来了就留言，能骗一个IP是一个IP。
-                            </p>
-                            <p class="tile-subtitle text-gray">
-                                2019 年 10 月 15 日 13:40
-                            </p>
-                        </div>
-                    </li>
-
 
                     @{
                         foreach (var item in commentList)
@@ -95,7 +75,7 @@
                                 </div>
                                 <div class="tile-content">
                                     <p class="tile-title text-bold">
-                                        <a class="url">@item.weburl</a>
+                                        <a class="url">@item.commentatorName</a>
                                     </p>
                                     <p class="tile-title">
                                         @item.content
@@ -145,15 +125,23 @@
     $(function () {
         $('#commentform').submit(function () {
             $.ajax({
-                //几个参数需要注意一下
-                type: "POST",//方法类型
-                dataType: "json",//预期服务器返回的数据类型
-                url: "/article/add",//url
+                type: "POST",
+                dataType: "json",
+                url: "/article/add",
                 data: $('#commentform').serialize(),
                 success: function (result) {
-                    console.log(result);//打印服务端返回的数据(调试用)
                     if (result.resultCode == 200) {
-                        alert("SUCCESS");
+                        document.getElementById("count").innerText = parseInt(document.getElementById("count").innerText) + 1;
+                        $("#commentlist").append(`<li id="comment-244" class="tile tile-comment">
+                                <div class="tile-icon vcard">
+                                    <div class="visitor gravatar">
+                                        <img alt="" class="avatar avatar-36 photo" height="36" width="36">
+                                    </div></div><div class="tile-content"><p class="tile-title text-bold">
+                                        <a class="url">${result.newData.name}</a></p>
+                                    <p class="tile-title">${result.newData.content}</p>
+                                    <p class="tile-subtitle text-gray">刚刚</p>
+                                </div>
+                            </li>`);
                     };
                 },
                 error: function () {

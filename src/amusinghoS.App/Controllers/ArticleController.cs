@@ -81,7 +81,7 @@ namespace amusinghoS.App.Controllers
             try
             {
                 await _redisclient.RPushAsync("newcomment", commentVm, 3000);
-                return Ok(new { resultCode = 200, msg = "保存成功！" });
+                return Ok(new { resultCode = 200, msg = "保存成功！",newData = commentVm });
             }
             catch
             {
