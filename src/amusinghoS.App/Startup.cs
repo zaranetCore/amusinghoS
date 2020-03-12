@@ -61,6 +61,7 @@ namespace amusinghoS
             var csredis = new CSRedis.CSRedisClient("39.104.53.29:6379,password=zaranet");
             RedisHelper.Initialization(csredis);
 
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews();
         }
@@ -85,7 +86,8 @@ namespace amusinghoS
             app.UseHangfireDashboard();
             RecurringJobExtensions.AddRecurringJobs();
 
-            app.UseAuthorization();
+            app.UseAuthorization(); 
+            app.UseAuthentication();
             app.UseRequestLocalization(
                 options:app.ApplicationServices
                 .GetService<IOptions<RequestLocalizationOptions>>().Value);
