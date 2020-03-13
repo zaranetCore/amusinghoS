@@ -230,6 +230,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[3.10.6, )"
+            },
+            "Microsoft.AspNetCore.DataProtection": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.2.0, )"

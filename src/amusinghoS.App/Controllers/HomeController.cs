@@ -1,17 +1,10 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using amusinghoS.EntityData.Model;
-using amusinghoS.EntityData;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using amusinghoS.Services;
-using amusinghoS.App;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 
 namespace amusinghoS.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         UnitOfWork _unitWork;

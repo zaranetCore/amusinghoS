@@ -20,6 +20,7 @@ namespace amusinghoS
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseUrls("http://*:5001");
                     webBuilder.UseStartup<Startup>();
                 });
     }

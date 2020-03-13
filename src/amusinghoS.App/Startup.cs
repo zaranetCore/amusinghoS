@@ -19,6 +19,7 @@ using AutoMapper;
 using System;
 using Hangfire;
 using Hangfire.MySql.Core;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace amusinghoS
 {
@@ -60,7 +61,6 @@ namespace amusinghoS
             services.AddScoped<IRedisClient, CustomerRedis>();
             var csredis = new CSRedis.CSRedisClient("39.104.53.29:6379,password=zaranet");
             RedisHelper.Initialization(csredis);
-
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews();
