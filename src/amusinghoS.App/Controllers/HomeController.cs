@@ -3,6 +3,10 @@ using System.Linq;
 using amusinghoS.Services;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 namespace amusinghoS.Controllers
 {
@@ -13,14 +17,20 @@ namespace amusinghoS.Controllers
         public HomeController(UnitOfWork unitOfWork)
         {
             _unitWork = unitOfWork;
+
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             //默认 8个文章
             var list = _unitWork.amusingArticleRepository.GetAll();
             ViewData["Current"] = 1;
-
             ViewData["NextIsNull"] = "NO";
+
+            var accessToken  = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
+            var idToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
+
+            var refreshToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.RefreshToken);
+            var authorzationCode = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.Code);
 
             return View(list.Take(3).ToList());
         }
@@ -43,6 +53,12 @@ namespace amusinghoS.Controllers
                 ViewData["NextIsNull"] = "OK";
 
             return View(list);
+        }
+
+        public async Task Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
         }
     }
 }

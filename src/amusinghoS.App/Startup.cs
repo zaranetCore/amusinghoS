@@ -19,9 +19,10 @@ using AutoMapper;
 using System;
 using Hangfire;
 using Hangfire.MySql.Core;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using System.IdentityModel.Tokens.Jwt;
 using IdentityModel;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 namespace amusinghoS
 {
@@ -69,23 +70,22 @@ namespace amusinghoS
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             services.AddAuthentication(options =>
             {
-                options.DefaultScheme = "Cookies";
-                options.DefaultChallengeScheme = "oidc";
-            }).AddCookie("Cookies")
-                .AddOpenIdConnect("oidc",options=> {
-                    options.SignInScheme = "Cookies";
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+            }).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,options=> {
+                options.ExpireTimeSpan = TimeSpan.FromSeconds(10);
+            }).AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme,options=> {
+                    options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                     options.Authority = "http://localhost:5000";
                     options.RequireHttpsMetadata = false;
                     options.ClientId = "mvc client";
                     options.ClientSecret = "mvc secret";
                     options.SaveTokens = true;
                     options.ResponseType = "code";
-
                     options.Scope.Clear();
                     options.Scope.Add(OidcConstants.StandardScopes.OpenId);
                     options.Scope.Add(OidcConstants.StandardScopes.Profile);
                 });
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
