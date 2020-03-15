@@ -20,6 +20,8 @@ using System;
 using Hangfire;
 using Hangfire.MySql.Core;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using System.IdentityModel.Tokens.Jwt;
+using IdentityModel;
 
 namespace amusinghoS
 {
@@ -32,7 +34,6 @@ namespace amusinghoS
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLocalization(options => options.ResourcesPath = "Resources");
@@ -64,9 +65,29 @@ namespace amusinghoS
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews();
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = "Cookies";
+                options.DefaultChallengeScheme = "oidc";
+            }).AddCookie("Cookies")
+                .AddOpenIdConnect("oidc",options=> {
+                    options.SignInScheme = "Cookies";
+                    options.Authority = "http://localhost:5000";
+                    options.RequireHttpsMetadata = false;
+                    options.ClientId = "mvc client";
+                    options.ClientSecret = "mvc secret";
+                    options.SaveTokens = true;
+                    options.ResponseType = "code";
+
+                    options.Scope.Clear();
+                    options.Scope.Add(OidcConstants.StandardScopes.OpenId);
+                    options.Scope.Add(OidcConstants.StandardScopes.Profile);
+                });
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -79,15 +100,14 @@ namespace amusinghoS
                 app.UseCustomErrorPages();
             }
             app.UseStaticFiles();
-
+            app.UseCookiePolicy();
             app.UseRouting();
-
             app.UseHangfireServer();
             app.UseHangfireDashboard();
             RecurringJobExtensions.AddRecurringJobs();
-
-            app.UseAuthorization(); 
             app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseRequestLocalization(
                 options:app.ApplicationServices
                 .GetService<IOptions<RequestLocalizationOptions>>().Value);

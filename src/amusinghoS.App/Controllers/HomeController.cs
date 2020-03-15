@@ -2,9 +2,11 @@
 using System.Linq;
 using amusinghoS.Services;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace amusinghoS.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         UnitOfWork _unitWork;
