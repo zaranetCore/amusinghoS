@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 namespace amusinghoS.Controllers
 {
-    [Authorize]
+    [Authorize()]
     public class HomeController : Controller
     {
         UnitOfWork _unitWork;

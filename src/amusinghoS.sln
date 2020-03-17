@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "intermediary", "intermediar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amusingHos.IdentityServer", "amusingHos.IdentityServer\amusingHos.IdentityServer.csproj", "{F48C0B15-8139-41C4-89C1-2EEF97C5441C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "amusinghoS.Api", "amusinghoS.Api\amusinghoS.Api.csproj", "{385AA268-C721-4871-A682-308E43024CBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{F48C0B15-8139-41C4-89C1-2EEF97C5441C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F48C0B15-8139-41C4-89C1-2EEF97C5441C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F48C0B15-8139-41C4-89C1-2EEF97C5441C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385AA268-C721-4871-A682-308E43024CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385AA268-C721-4871-A682-308E43024CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385AA268-C721-4871-A682-308E43024CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385AA268-C721-4871-A682-308E43024CBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{7A57F743-B60B-428B-A1E4-A2F0506A5846} = {60900133-103B-43AE-80A7-19013397A562}
 		{415C867D-F51F-45E2-8464-56DEA35B134B} = {60900133-103B-43AE-80A7-19013397A562}
 		{F48C0B15-8139-41C4-89C1-2EEF97C5441C} = {9AA41436-64D1-4796-AFC6-76FFB0A19B0E}
+		{385AA268-C721-4871-A682-308E43024CBC} = {60900133-103B-43AE-80A7-19013397A562}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D0CFC75-5BAE-4CE5-AB94-DB27C9CA5B2A}

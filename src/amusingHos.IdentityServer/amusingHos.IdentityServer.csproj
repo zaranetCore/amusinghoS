@@ -6,10 +6,28 @@
 
   <ItemGroup>
     <PackageReference Include="IdentityServer4" Version="3.1.0" />
+    <PackageReference Include="IdentityServer4.EntityFramework" Version="3.1.0" />
     
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.0" />
+    
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
 
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\amusinghoS.Entity\amusinghoS.EntityData.csproj" />
+    <ProjectReference Include="..\amusinghoS.Services\amusinghoS.Services.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
 
 </Project>
