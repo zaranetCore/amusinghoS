@@ -50,7 +50,8 @@ namespace amusinghoS
                         opts.RequestCultureProviders = new List<IRequestCultureProvider>{
                            new X_DOVERequestCultureProvider()
                         };
-                }); 
+                });
+            services.AddResponseCompression();
             services.AddHangfire(config =>
                 {
                     config.UseStorage(new MySqlStorage("Server=39.104.53.29; uid = zaranet; pwd = 123456; database = amusinghoS;AllowUserVariables=True;    "));
@@ -106,7 +107,8 @@ namespace amusinghoS
             app.UseHangfireDashboard();
             RecurringJobExtensions.AddRecurringJobs();
             app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseAuthorization(); 
+            app.UseResponseCompression();
 
             app.UseRequestLocalization(
                 options:app.ApplicationServices
