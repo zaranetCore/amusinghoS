@@ -12,23 +12,28 @@ namespace amusingHos.IdentityServer
 {
     public static class Config
     {
-        public static IEnumerable<IdentityResource> Ids =>
-            new IdentityResource[]
+        public static IEnumerable<IdentityResource> GetIdentityResources()
+        {
+            return new List<IdentityResource>
             {
+                new IdentityResources.Email(),
                 new IdentityResources.OpenId(),
-                new IdentityResources.Profile()
+                new IdentityResources.Profile(),
             };
-
-
-        public static IEnumerable<ApiResource> Apis =>
-            new ApiResource[]
+        }
+        public static IEnumerable<ApiResource> GetApiResources()
+        {
+            return new List<ApiResource>
             {
-                new ApiResource("api1", "My API #1",new List<string>(){ JwtClaimTypes.Role})
+                new ApiResource("api1", "My API")
             };
+        }
 
 
-        public static IEnumerable<Client> Clients =>
-            new Client[]
+        public static IEnumerable<Client> GetClients()
+        {
+            // client credentials client
+            return new List<Client>
             {
                 // client credentials flow client
                 new Client
@@ -62,5 +67,6 @@ namespace amusingHos.IdentityServer
                         IdentityServerConstants.StandardScopes.Profile}
                 }
             };
+        }
     }
 }

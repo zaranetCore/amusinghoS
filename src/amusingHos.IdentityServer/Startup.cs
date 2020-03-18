@@ -2,13 +2,20 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using amusingHos.IdentityServer.Models;
 using IdentityServer4;
+using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Quickstart.UI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Linq;
+using System.Reflection;
 
 namespace amusingHos.IdentityServer
 {
@@ -27,41 +34,33 @@ namespace amusingHos.IdentityServer
         {
             services.AddControllersWithViews();
 
-            // configures IIS out-of-proc settings (see https://github.com/aspnet/AspNetCore/issues/14882)
-            services.Configure<IISOptions>(iis =>
-            {
-                iis.AuthenticationDisplayName = "Windows";
-                iis.AutomaticAuthentication = false;
-            });
+            // Add framework services.
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySql("Server=39.104.53.29;uid=zaranet;pwd=123456;database=amusinghoS_identity;"));
 
-            // configures IIS in-proc settings
-            services.Configure<IISServerOptions>(iis =>
-            {
-                iis.AuthenticationDisplayName = "Windows";
-                iis.AutomaticAuthentication = false;
-            });
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
-            var builder = services.AddIdentityServer(options =>
-            {
-                options.Events.RaiseErrorEvents = true;
-                options.Events.RaiseInformationEvents = true;
-                options.Events.RaiseFailureEvents = true;
-                options.Events.RaiseSuccessEvents = true;
-            })
-                .AddTestUsers(TestUsers.Users);
+            services.AddMvc();
+            string migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+            services.AddIdentityServer()
+                .AddConfigurationStore(options =>
+                {
+                    options.ConfigureDbContext = builder =>
+                       builder.UseMySql("Server=39.104.53.29;uid=zaranet;pwd=123456;database=amusinghoS_identity;",
+                       sql => sql.MigrationsAssembly(migrationsAssembly));
+                })
+                .AddOperationalStore(options =>
+                {
+                    options.ConfigureDbContext = builder =>
+                        builder.UseMySql("Server=39.104.53.29;uid=zaranet;pwd=123456;database=amusinghoS_identity;",
+                        sql => sql.MigrationsAssembly(migrationsAssembly));
 
-            // in-memory, code config
-            builder.AddInMemoryIdentityResources(Config.Ids);
-            builder.AddInMemoryApiResources(Config.Apis);
-            builder.AddInMemoryClients(Config.Clients);
-
-            // or in-memory, json config
-            //builder.AddInMemoryIdentityResources(Configuration.GetSection("IdentityResources"));
-            //builder.AddInMemoryApiResources(Configuration.GetSection("ApiResources"));
-            //builder.AddInMemoryClients(Configuration.GetSection("clients"));
-
-            // not recommended for production - you need to store your key material somewhere secure
-            builder.AddDeveloperSigningCredential();
+                    // this enables automatic token cleanup. this is optional.
+                    options.EnableTokenCleanup = true;
+                    options.TokenCleanupInterval = 30;
+                });
 
             services.AddAuthentication()
                 .AddGoogle(options =>
@@ -78,6 +77,7 @@ namespace amusingHos.IdentityServer
 
         public void Configure(IApplicationBuilder app)
         {
+            InitializeDatabase(app);
             if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -92,6 +92,43 @@ namespace amusingHos.IdentityServer
             {
                 endpoints.MapDefaultControllerRoute();
             });
+        }
+        private void InitializeDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.Migrate();
+                serviceScope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>().Database.Migrate();
+
+                var context = serviceScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
+                context.Database.Migrate();
+                if (!context.Clients.Any())
+                {
+                    foreach (var client in Config.GetClients())
+                    {
+                        context.Clients.Add(client.ToEntity());
+                    }
+                    context.SaveChanges();
+                }
+
+                if (!context.IdentityResources.Any())
+                {
+                    foreach (var resource in Config.GetIdentityResources())
+                    {
+                        context.IdentityResources.Add(resource.ToEntity());
+                    }
+                    context.SaveChanges();
+                }
+
+                if (!context.ApiResources.Any())
+                {
+                    foreach (var resource in Config.GetApiResources())
+                    {
+                        context.ApiResources.Add(resource.ToEntity());
+                    }
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }
