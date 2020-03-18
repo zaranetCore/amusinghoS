@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace amusingHos.IdentityServer.Migrations.ConfigurationDb
+namespace amusingHos.IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
 {
-    public partial class init : Migration
+    public partial class InitialIdentityServerConfigurationDbMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
