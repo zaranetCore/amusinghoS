@@ -51,6 +51,8 @@ namespace amusinghoS
                            new X_DOVERequestCultureProvider()
                         };
                 });
+            services.AddSession(options => options.IdleTimeout = TimeSpan.FromMinutes(30));
+
             services.AddResponseCompression();
             services.AddHangfire(config =>
                 {
@@ -103,6 +105,7 @@ namespace amusinghoS
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseRouting();
+            app.UseSession();
             app.UseHangfireServer();
             app.UseHangfireDashboard();
             RecurringJobExtensions.AddRecurringJobs();

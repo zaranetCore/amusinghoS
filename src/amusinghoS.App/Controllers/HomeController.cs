@@ -7,16 +7,18 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Http;
 
 namespace amusinghoS.Controllers
 {
     public class HomeController : Controller
     {
-        UnitOfWork _unitWork;
-        public HomeController(UnitOfWork unitOfWork)
+        private IHttpContextAccessor HttpContextAccessor;
+        private UnitOfWork _unitWork;
+        public HomeController(UnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
         {
             _unitWork = unitOfWork;
-
+            HttpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {

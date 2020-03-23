@@ -15,7 +15,7 @@ namespace amusinghoS.EntityData
         public amusinghoSDbContext() { } //非注入构造方式
         #endregion
 
-        public DbSet<amusingHosUser> amusingHosUsers { get; set; }
+        public DbSet<amusingUser> amusingHosUsers { get; set; }
         public DbSet<amusingArticle> amusingArticles { get; set; }
         public DbSet<amusingArticleDetails> amusingArticleDetails { get; set; }
 
@@ -37,10 +37,10 @@ namespace amusinghoS.EntityData
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //You can use Fluent API override your Entity.
-            modelBuilder.Entity<amusingHosUser>()
-                .HasKey(k => new { k.userId });
-            modelBuilder.Entity<amusingHosUser>()
-                .Property(p => p.PassWord).HasMaxLength(18);
+            //modelBuilder.Entity<amusingHosUser>()
+            //    .HasKey(k => new { k.userId });
+            //modelBuilder.Entity<amusingHosUser>()
+            //    .Property(p => p.PassWord).HasMaxLength(18);
         }
     }
 }

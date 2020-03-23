@@ -125,21 +125,37 @@ namespace amusinghoS.EntityData.Migrations
                     b.ToTable("amusingArticleDetails");
                 });
 
-            modelBuilder.Entity("amusinghoS.EntityData.Model.amusingHosUser", b =>
+            modelBuilder.Entity("amusinghoS.EntityData.Model.amusingUser", b =>
                 {
-                    b.Property<string>("userId")
+                    b.Property<string>("articleUserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("varchar(16) CHARACTER SET utf8mb4")
-                        .HasMaxLength(16);
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<string>("PassWord")
-                        .HasColumnType("varchar(18) CHARACTER SET utf8mb4")
-                        .HasMaxLength(18);
+                    b.Property<string>("CreateUserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("userId");
+                    b.Property<DateTime>("DelTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("DeleteId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("articleUserName")
+                        .HasColumnType("varchar(64)");
+
+                    b.Property<string>("password")
+                        .HasColumnType("varchar(128)");
+
+                    b.Property<string>("phoneID")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("wechat_user_ID")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("articleUserId");
 
                     b.ToTable("amusingHosUsers");
                 });

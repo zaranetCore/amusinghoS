@@ -197,5 +197,4 @@ E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Microsoft.Ident
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 E:\Project\amusinghoS\src\amusinghoS.App\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\amusinghoS.App.MvcApplicationPartsAssemblyInfo.cache
 E:\Project\amusinghoS\src\amusinghoS.App\obj\Debug\netcoreapp3.1\Razor\Views\Oauth\Index.cshtml.g.cs

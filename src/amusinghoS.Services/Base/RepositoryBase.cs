@@ -34,6 +34,10 @@ namespace amusinghoS.Services.Base
         {
             return _dbSet.Where(whereLambd).Any();
         }
+        public Task<bool> AnyAsync(Expression<Func<T, bool>> whereLambd)
+        {
+            return _dbSet.Where(whereLambd).AnyAsync();
+        }
         public void Disposed()
         {
             throw new Exception("不允许在这里释放上下文，请在UnitOfWork中操作");

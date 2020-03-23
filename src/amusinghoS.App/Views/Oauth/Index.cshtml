@@ -2,140 +2,59 @@
 @{
     Layout = null;
 }
-<title>bootstrap登录注册表单切换页面</title>
-<link href="~/static/css/demo.css" rel="stylesheet" media="all" />
-<script src="~/js/jquery-1.10.2.min.js" type="text/javascript"></script>
-<style>
-    .fdad a {
-        color: #000;
-        display: inline-block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .fdad {
-        top: 66px;
-    }
-
-    .xgcj li {
-        font-size: 14px;
-        line-height: 20px;
-        list-style-type: none;
-        transition: all 1s ease 0s;
-        border-radius: 5px;
-    }
-
-        .xgcj li:hover {
-            background-color: #e4e4e4;
-        }
-
-    .xgcj {
-        background-color: rgba(255,255,255,.3);
-        overflow-x: hidden;
-    }
-
-        .xgcj ul {
-            padding: 10px
-        }
-
-        .xgcj h3 {
-            line-height: 30px;
-        }
-
-        .xgcj p {
-            padding-left: 20px;
-            font-size: 13px;
-            display: none;
-        }
-
-        .xgcj span {
-            font-family: "宋体";
-        }
-
-        .xgcj li:hover p {
-            display: block;
-        }
-</style>
-<script src="~/static/js/pace.min.js" charset="gbk"></script>
-<link href="~/static/css/pace-theme-barber-shop.css" rel="stylesheet" />
-<script src="~/static/js/jquery.qrcode.min.js"></script>
-
-<script type="text/javascript">
-    var dqfl = "输入";
-    var theme_list_open = false;
-
-    $(document).ready(function () {
-        function fixHeight() {
-            var headerHeight = $("#switcher").height();
-            $("#iframe").attr("height", $(window).height() - 54 + "px");
-        }
-        $(window).resize(function () {
-            fixHeight();
-        }).resize();
-
-        $('.icon-monitor').addClass('active');
-
-        $(".icon-mobile-3").click(function () {
-            $("#by").css("overflow-y", "auto");
-            $('#iframe-wrap').removeClass().addClass('mobile-width-3');
-            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
-            $(this).addClass('active');
-            return false;
-        });
-
-        $(".icon-mobile-2").click(function () {
-            $("#by").css("overflow-y", "auto");
-            $('#iframe-wrap').removeClass().addClass('mobile-width-2');
-            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
-            $(this).addClass('active');
-            return false;
-        });
 
 
-        $(".icon-mobile-1").click(function () {
-            $("#by").css("overflow-y", "auto");
-            $('#iframe-wrap').removeClass().addClass('mobile-width');
-            $('.icon-tablet,.icon-mobile,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
-            $(this).addClass('active');
-            return false;
-        });
+    <title>登录表单</title>
 
-        $(".icon-tablet").click(function () {
-            $("#by").css("overflow-y", "auto");
-            $('#iframe-wrap').removeClass().addClass('tablet-width');
-            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
-            $(this).addClass('active');
-            return false;
-        });
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-        $(".icon-monitor").click(function () {
-            $("#by").css("overflow-y", "hidden");
-            $('#iframe-wrap').removeClass().addClass('full-width');
-            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
-            $(this).addClass('active');
-            return false;
-        });
 
-        if (dqfl.indexOf("APP模板") != -1) {
-            $("#by").css("overflow-y", "auto");
-            $('#iframe-wrap').removeClass().addClass('mobile-width-2');
-            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
-            $(this).addClass('active');
-            return false;
-        }
-    });
-</script>
-<script type="text/javascript">
-    function Responsive($a) {
-        if ($a == true) $("#Device").css("opacity", "100");
-        if ($a == false) $("#Device").css("opacity", "0");
-        $('#iframe-wrap').removeClass().addClass('full-width');
-        $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
-        $(this).addClass('active');
-        return false;
-    };
-</script>
-<div id="iframe-wrap">
-    <iframe id="iframe" src="http://www.jq22.com/demo/bootstrapdlzc201907042052" frameborder="0" width="100%"></iframe>
-</div>
+    <link rel="stylesheet" href="~/css/login.css" type="text/css" media="all">
+
+    <h1>登录表单</h1>
+    <div class="container w3layouts agileits">
+        <div class="login w3layouts agileits">
+            <h2>登 录</h2>
+            <form action="#" method="post">
+                <input type="text" Name="Userame" placeholder="用户名" required="" value="admin">
+                <input type="password" Name="Password" placeholder="密码" required="">
+            </form>
+            <div class="send-button w3layouts agileits">
+                <form>
+                    <input type="submit" value="登 录">
+                </form>
+            </div>
+            <a href="#">记住密码?</a>
+            <div class="social-icons w3layouts agileits">
+                <p>- 其他方式登录 -</p>
+                <ul>
+                    <li class="qq"><a href="#"> <span class="icons w3layouts agileits"></span> <span class="text w3layouts agileits">QQ</span></a></li>
+                    <li class="weixin w3ls"><a href="#"> <span class="icons w3layouts"></span> <span class="text w3layouts agileits">微信</span></a></li>
+                    <li class="weibo aits"><a href="#"> <span class="icons agileits"></span> <span class="text w3layouts agileits">微博</span></a></li>
+                    <div class="clear"> </div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="register w3layouts agileits">
+            <h2>注 册</h2>
+            <form action="#" method="post">
+                <input type="text" Name="Name" placeholder="用户名" required="" value="admin">
+                <input type="text" Name="Email" placeholder="邮箱" required="" value="admin@163.com">
+                <input type="password" Name="Password" placeholder="密码" required="">
+                <input type="text" Name="Phone Number" placeholder="手机号码" required="">
+            </form>
+            <div class="send-button w3layouts agileits">
+                <form>
+                    <input type="submit" value="免费注册">
+                </form>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="footer w3layouts agileits">
+        <p>Power by zaranet</p>
+    </div>

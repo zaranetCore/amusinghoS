@@ -8,17 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200228064134_2020228.cs" />
-    <Compile Remove="Migrations\20200228064134_2020228.Designer.cs" />
-    <Compile Remove="Migrations\20200228064210_20200228.cs" />
-    <Compile Remove="Migrations\20200228064210_20200228.Designer.cs" />
-    <Compile Remove="Migrations\20200228071502_refrerce.cs" />
-    <Compile Remove="Migrations\20200228071502_refrerce.Designer.cs" />
-    <Compile Remove="Migrations\20200304051628_dEMO.cs" />
-    <Compile Remove="Migrations\20200304051628_dEMO.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
